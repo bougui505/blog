@@ -3,6 +3,9 @@ title: "Work with protein data bank (pdb) files and awk"
 layout: default
 category: awk
 date: 2014-10-18 21:39:47 CEST
+tags:
+- awk
+- pdb
 ---
 
 - Format a pdb with awk for fields: [ATOM] [Atom  serial number] [Atom name] [Residue name] [Chain identifier] [Residue sequence number] [x] [y] [z]
