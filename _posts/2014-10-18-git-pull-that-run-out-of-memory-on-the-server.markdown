@@ -8,7 +8,7 @@ tags:
 ---
 
 
-- from: http://stackoverflow.com/questions/7362709/git-pull-fails-with-bad-pack-header-error
+- from: [stackoverflow](http://stackoverflow.com/questions/7362709/git-pull-fails-with-bad-pack-header-error)
 
 {% highlight bash %}
 git config --global pack.windowMemory "100m"
