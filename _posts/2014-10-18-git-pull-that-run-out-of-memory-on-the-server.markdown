@@ -5,7 +5,7 @@ category: git
 date: 2014-10-18 22:35:18 CEST
 tags:
 - git
-- raspberry pi
+- raspberry-pi
 ---
 
 # Git pull that run out of memory on my raspberry pi server
