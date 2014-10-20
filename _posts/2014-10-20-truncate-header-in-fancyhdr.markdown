@@ -15,7 +15,7 @@ Here it's a possible fix from [stackoverflow](http://tex.stackexchange.com/quest
 {% highlight latex %}
 {% raw %}
 \usepackage{fancyhdr}
-\usepackage[breakall]{truncate}
+\usepackage[hyphenate]{truncate} % hyphenate words. Other options are: breakwords, breakall
 
 \fancypagestyle{truncatehdr}{%
 \fancyhf{} % remove everything
