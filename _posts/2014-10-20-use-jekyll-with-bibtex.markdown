@@ -28,16 +28,14 @@ In this directory put your bib file under the name `references.bib`.
 
 In the root directory of the jekyll web site create the file `bibliography.md`:
 
-{% highlight markdown %}
----
-layout: default
-title: Bibliography
----
+    ---
+    layout: default
+    title: Bibliography
+    ---
 
-# Bibliography
+    # Bibliography
 
-{% bibliography %}
-{% endhighlight %}
+    {% bibliography %}
 
 That's all.
 With the default jekyll theme a link to the generated bibliography page should appear in the top navigation bar of the generated web site (`jekyll build`).
