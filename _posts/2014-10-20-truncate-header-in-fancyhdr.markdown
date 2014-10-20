@@ -20,7 +20,8 @@ Here it's a possible fix from [stackoverflow](http://tex.stackexchange.com/quest
 \fancypagestyle{truncatehdr}{%
 \fancyhf{} % remove everything
 \lhead{\truncate{15em}{\leftmark}}
-\rhead{\truncate{15em}{\rightmark}}}
+\rhead{\truncate{15em}{\rightmark}}
+\cfoot{\thepage}}
 
 \pagestyle{truncatehdr}
 {% endraw %}
