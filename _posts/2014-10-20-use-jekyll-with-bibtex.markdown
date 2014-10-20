@@ -35,7 +35,7 @@ In the root directory of the jekyll web site create the file `bibliography.md`:
 
     # Bibliography
 
-    {% bibliography %}
+    {{ "{% bibliography " }}%}
 
 That's all.
 With the default jekyll theme a link to the generated bibliography page should appear in the top navigation bar of the generated web site (`jekyll build`).
