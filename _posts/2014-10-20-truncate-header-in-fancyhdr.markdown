@@ -13,6 +13,7 @@ Sometime header overlaps with fancyhdr when section titles are too long.
 Here it's a possible fix from [stackoverflow](http://tex.stackexchange.com/questions/41277/how-to-cut-a-section-title-in-the-header):
 
 {% highlight latex %}
+{% raw %}
 \usepackage{fancyhdr}
 \usepackage[breakall]{truncate}
 
@@ -22,6 +23,7 @@ Here it's a possible fix from [stackoverflow](http://tex.stackexchange.com/quest
 \rhead{\truncate{15em}{\rightmark}}}
 
 \pagestyle{truncatehdr}
+{% endraw %}
 {% endhighlight %}
 
 In this way you truncate the header to fit in.
