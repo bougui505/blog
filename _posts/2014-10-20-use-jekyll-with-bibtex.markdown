@@ -43,6 +43,7 @@ That's all.
 With the default jekyll theme a link to the generated bibliography page should appear in the top navigation bar of the generated web site (`jekyll build`).
 
 If you want to sort the bibliography by year you can add this in the `_config.yml`
+
     scholar:
         sort_by: year
         order: descending
