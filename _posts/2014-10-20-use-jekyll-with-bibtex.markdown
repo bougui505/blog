@@ -8,6 +8,8 @@ tags:
 - LaTeX
 ---
 
+# Use Jekyll with BibTeX
+
 First install jekyll-scholar:
 {% highlight bash %}
 gem install --no-rdoc --no-ri --user-install jekyll-scholar
