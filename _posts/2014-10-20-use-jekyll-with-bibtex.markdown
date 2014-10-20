@@ -3,8 +3,9 @@ title: "Use Jekyll with BibTeX"
 layout: default
 category: jekyll
 date: 2014-10-20 09:56:31 CEST
-tags: - jekyll
-      - LaTeX
+tags:
+- jekyll
+- LaTeX
 ---
 
 First install jekyll-scholar:
