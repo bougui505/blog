@@ -9,12 +9,12 @@ tags:
 - LaTeX
 ---
 
-# Figure size font and LaTeX with matplotlib and python
+# Figure size, font and LaTeX with matplotlib and python
 
 To change the font in matplotlib and use LaTeX:
 
 {% highlight python %}
-from pylab import * # or %pylab inline in ipython notebook
+from pylab import * # or '%pylab inline' in ipython notebook
 fontsize=18
 rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':fontsize})
 rc('text', usetex=True)
