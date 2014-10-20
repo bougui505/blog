@@ -11,3 +11,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 
+# Bibliography
+scholar:
+    sort_by: year
+    order: descending
