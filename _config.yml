@@ -15,4 +15,3 @@ markdown: kramdown
 scholar:
     sort_by: year
     order: descending
-
