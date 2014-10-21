@@ -10,6 +10,7 @@ tags:
 
 # Transition networks with python
 
+First the imports in ipython notebook:
 
     %pylab inline
     import skimage.morphology as morphology
@@ -131,19 +132,10 @@ The plot of the transition matrix
 
     imshow(T, interpolation='nearest', cmap=cm.coolwarm, norm=matplotlib.colors.LogNorm())
 
-
-
-
-    <matplotlib.image.AxesImage at 0xc5672d0>
-
-
-
-
 ![png](/assets/transition_network_toy_model_files/transition_network_toy_model_12_1.png)
 
 
 The transition matrix is then diagonalized
-
 
     w,v = linalg.eig(T)
     w = real(w)
@@ -154,20 +146,14 @@ The transition matrix is then diagonalized
 Just a simple watershed on the energy to identify energy basins based on the
 energy plot
 
-
     structelem = numpy.ones((3), dtype='bool')
     labels = zeros(100)
     for i,e in enumerate(x[1:6:2]):
         labels[int(e)] = i+1
     x_lin = linspace(0, 100, 100)
     labels_full = morphology.watershed(E(x_lin), labels, connectivity=structelem)
-    print labels_full.shape
-
-    (100,)
-
 
 A function to substitute values in an array
-
 
     def substitute(d, arr):
         """
@@ -180,46 +166,27 @@ A function to substitute values in an array
 
 The projection of the transition matrix onto the second and third eigen vector
 
-
     proj = dot(transpose(T),v[:,1:3])
     # create k-meansclustering estimators
     kmeans = sklearn.cluster.KMeans(n_clusters=3)
     kmeans.fit(proj)
     mgrid = asarray(meshgrid(linspace(min(proj[:,0]),max(proj[:,0]),100),linspace(min(proj[:,1]),max(proj[:,1]),100))).T
-    #print mgrid
     kmeans_partition = kmeans.predict(mgrid.reshape(100*100,2)).reshape(100,100)
     d = {}
     for i in unique(kmeans.labels_):
         c,b = histogram(labels_full[kmeans.labels_==i])
-        #print labels_full[kmeans.labels_==i]
-        #print i, b[argmax(c)]
         d[i] = int(b[argmax(c)])
     print d
-    #kmeans.labels_ = substitute(d, kmeans.labels_)
-    #kmeans_partition = substitute(d, kmeans_partition)
     imshow(kmeans_partition[:,::-1].T, interpolation='none', extent=[min(proj[:,0]),max(proj[:,0]),min(proj[:,1]),max(proj[:,1])])
     colorbar()
     scatter(proj[:,0], proj[:,1],c=labels_full, s=64)
     xlabel('second eigenvector')
     ylabel('third eigenvector')
 
-    {0: 1, 1: 2, 2: 3}
-
-
-
-
-
-    <matplotlib.text.Text at 0x14c9e2d0>
-
-
-
-
 ![png](/assets/transition_network_toy_model_files/transition_network_toy_model_20_2.png)
-
 
 The code below identifies the three metastable states and compute the Markov
 chain model
-
 
     pi, bins = histogram(traj, normed=True, bins=100)
     plot(pi)
@@ -236,8 +203,6 @@ chain model
                 num+=pi[i] * T[j,i]
         trans = num/pi[sel1].sum()
         return trans
-    
-    #print meta_transition(1,3)
     
     gdot = graphviz.Digraph()
     for i in unique(kmeans.labels_):
@@ -259,7 +224,6 @@ chain model
     
     figure()
     tmp = plotdotgraph(dotfn)
-
 
 ![png](/assets/transition_network_toy_model_files/transition_network_toy_model_22_0.png)
 
@@ -286,7 +250,6 @@ And here the full story
     
     subplot(gs[:3,1])
     imshow(T, interpolation='nearest', cmap=cm.coolwarm, norm=matplotlib.colors.LogNorm())
-    #colorbar()
     
     for i in range(3):
         subplot(gs[i,2])
