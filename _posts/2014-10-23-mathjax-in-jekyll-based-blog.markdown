@@ -26,4 +26,4 @@ just after the line:
 {% endraw %}
 {% endhighlight %}
 
-That's all, now you can use mathjax with standard LaTeX commands. For inline math use the `$$` instead of `$`.
+That's all, now you can use mathjax with standard LaTeX commands. For inline math use the `$$\frac{a}{b}$$` instead of `$\frac{a}{b}$`.
