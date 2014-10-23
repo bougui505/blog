@@ -15,7 +15,7 @@ To write math in your jekyll blog you can use mathjax. To enable it, just add th
 {% highlight html %}
 {% raw %}
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-{% raw %}
+{% endraw %}
 {% endhighlight %}
 
 just after the line:
@@ -23,7 +23,7 @@ just after the line:
 {% highlight html %}
 {% raw %}
 <header class="site-header">
-{% raw %}
+{% endraw %}
 {% endhighlight %}
 
 That's all, now you can use mathjax with standard LaTeX commands. For inline math use the `$$` instead of `$`.
