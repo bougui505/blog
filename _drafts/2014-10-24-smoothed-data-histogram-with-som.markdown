@@ -5,6 +5,7 @@ category: science
 date: 2014-10-24 15:47:19 CEST
 tags:
 - science
+- python
 ---
 
 # Smoothed data histogram with SOM
