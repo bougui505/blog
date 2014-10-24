@@ -14,7 +14,7 @@ visualize the SOM it's usual to compute the Unified distance matrix
 (**U-matrix**). The U-matrix gives for each neuron of the SOM the mean Euclidean
 distance between the considered neuron and its neighbors.
 
-![png](smooth_data_histograms_files/smooth_data_histograms_1_0.png)
+![png](/assets/smooth_data_histograms_files/smooth_data_histograms_1_0.png)
 
 
 Another way to visualize the SOM is to count the number of input data in each
@@ -26,7 +26,7 @@ do this each input data is not attributed to a unique cell but to an ensemble
 
 The ipython notebook import:
 
-{% highlight latex %}
+{% highlight python %}
 %pylab inline
 import scipy.ndimage
 import random
@@ -41,7 +41,7 @@ rcParams['figure.figsize'] = 10,6
 
 A 2D potential constructed from 4 randomly chosen points.
 
-{% highlight latex %}
+{% highlight python %}
 E = ones((50,50))
 pos = [(10,10),(30,40),(40,10),(10,40)]
 for c in pos:
@@ -51,11 +51,11 @@ matshow(E, cmap=cm.coolwarm)
 tmp = colorbar()
 {% endhighlight %}
 
-![png](smooth_data_histograms_files/smooth_data_histograms_5_0.png)
+![png](/assets/smooth_data_histograms_files/smooth_data_histograms_5_0.png)
 
 This potential is then sampled using a Monte-Carlo
 
-{% highlight latex %}
+{% highlight python %}
 def montecarlo(potential=E, nstep=1000, beta=1, markov=True):
     p = lambda x: exp(-beta*x)
     pos_prev = np.random.randint(0,50,size=2)
@@ -90,16 +90,16 @@ for pos in traj:
 
 And then we plot the distributions obtained from the MCMC:
 
-{% highlight latex %}
+{% highlight python %}
 matshow(density / nstep, cmap=cm.coolwarm, norm=matplotlib.colors.LogNorm())
 tmp = colorbar()
 {% endhighlight %}
 
-![png](smooth_data_histograms_files/smooth_data_histograms_11_0.png)
+![png](/assets/smooth_data_histograms_files/smooth_data_histograms_11_0.png)
 
 A Self-organizing map is trained with the MCMC sampling:
 
-{% highlight latex %}
+{% highlight python %}
 som = SOM2.SOM(traj)
 tmp = som.learn()
 {% endhighlight %}
@@ -111,7 +111,7 @@ periodic boundaries. The visualization is simpler with this representation.)
 
 The gray scale dots are the original density of the data in the SOM space.
 
-{% highlight latex %}
+{% highlight python %}
 umat = som.umatrix()
 
 som_density = zeros_like(som.smap[:,:,0])
@@ -128,12 +128,12 @@ imshow(ma.masked_array(density_cont, clust.mask), interpolation='nearest', cmap=
 tmp = axis('off')
 {% endhighlight %}
 
-![png](smooth_data_histograms_files/smooth_data_histograms_18_0.png)
+![png](/assets/smooth_data_histograms_files/smooth_data_histograms_18_0.png)
 
 And the U-matrix in the input space in comparison with the 2D histogram of the
 input data:
 
-{% highlight latex %}
+{% highlight python %}
 subplot(120)
 c = umat.flatten()
 scatter(som.smap[:,:,1].flatten()[c.argsort()[::-1]], som.smap[:,:,0].flatten()[c.argsort()[::-1]], 
@@ -143,11 +143,11 @@ input_dist = asarray(meshgrid(range(50), range(50))).T.reshape(2500,2)
 scatter(input_dist[:,1], input_dist[:,0], c=density, linewidths=0, cmap=cm.gray_r, marker='s')
 {% endhighlight %}
 
-![png](smooth_data_histograms_files/smooth_data_histograms_20_1.png)
+![png](/assets/smooth_data_histograms_files/smooth_data_histograms_20_1.png)
 
 Now we compute the smooth data histogram (SDH):
 
-{% highlight latex %}
+{% highlight python %}
 def sdh(smap, inputmat, s=8):
     """
     return the smooth data histogram of the SOM density
@@ -167,13 +167,13 @@ def sdh(smap, inputmat, s=8):
 
 And we choose a smoothing parameter `s` of 16
 
-{% highlight latex %}
+{% highlight python %}
 sdhmat = sdh(som.smap,traj, s=16)
 {% endhighlight %}
 
 We compare below the original density and the smoothed density:
 
-{% highlight latex %}
+{% highlight python %}
 subplot(121)
 imshow(ma.masked_array(density_cont, clust.mask), interpolation='nearest', cmap=cm.gray_r)
 contour(ma.masked_array(clust.umat_cont, clust.mask), 10, interpolation='nearest')
@@ -187,5 +187,5 @@ title('Smoothed density')
 tmp = axis('off')
 {% endhighlight %}
 
-![png](smooth_data_histograms_files/smooth_data_histograms_26_0.png)
+![png](/assets/smooth_data_histograms_files/smooth_data_histograms_26_0.png)
 
