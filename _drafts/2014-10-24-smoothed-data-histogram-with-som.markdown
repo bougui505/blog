@@ -7,6 +7,8 @@ tags:
 - science
 ---
 
+# Smoothed data histogram with SOM
+
 I played a lot with Self-Organizing Map (**SOM**). The 2D SOM distributes the
 input vectors onto a 2D plane. Mathematically the SOM is a 3D matrix and the
 length of the third dimension is given by the length of your input data. To
