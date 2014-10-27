@@ -63,4 +63,4 @@ And generate the pagination links:
 {% endraw %}
 {% endhighlight %}
 
-Jekyll does not generate page 1 folder thats why I added `{% if paginator.previous_page == 1 %}` condition to point the previous link to the root `index.html`.
+Jekyll does not generate page 1 folder thats why I added {% raw %} {% if paginator.previous_page == 1 %} {% endraw %} condition to point the previous link to the root `index.html`.
