@@ -11,6 +11,10 @@ github_username: bougui505
 # Build settings
 markdown: kramdown
 
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
+
 # Bibliography
 scholar:
     sort_by: year
