@@ -26,7 +26,11 @@ layout: default
     <!-- Pagination links -->
     <div class="pagination">
       {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <a href="/" class="previous">Previous</a>
+        {% else %}
         <a href="/blog/page{{ paginator.previous_page }}" class="previous">Previous</a>
+        {% endif %}
       {% else %}
         <span class="previous">Previous</span>
       {% endif %}
