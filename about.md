@@ -4,9 +4,10 @@ title: About
 permalink: /about/
 ---
 
-## Contacts:
+## Contact:
 
 Guillaume Bouvier
+
 guillaume.bouvier{at}ens-cachan.org
 
 ## Research experience:
@@ -23,10 +24,11 @@ guillaume.bouvier{at}ens-cachan.org
     - Nuclear Magnetic resonance (NMR) of protein ligand interactions.
     - Virtual screening and molecular modeling.
 
+### [Bibliography](http://izar.crabdance.com/bibliography.html)
+
 ## Education:
 
 - École Normale Supérieure de Cachan: biochemistry and biophysic
 
 - Agrégé de Biochimie Génie biologique (2006)
 
-See [this page](http://izar.crabdance.com/bibliography.html) for my bibliography.
