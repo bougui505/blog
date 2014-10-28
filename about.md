@@ -18,7 +18,7 @@ permalink: /about/
     - Nuclear Magnetic resonance (NMR) of protein ligand interactions.
     - Virtual screening and molecular modeling.
 
-### Education:
+## Education:
 
 - École Normale Supérieure de Cachan: biochemistry and biophysic
 
