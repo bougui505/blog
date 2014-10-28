@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-## Contact:
-
 Guillaume Bouvier
 
 guillaume.bouvier{at}ens-cachan.org
