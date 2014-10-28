@@ -4,6 +4,11 @@ title: About
 permalink: /about/
 ---
 
+## Contacts:
+
+Guillaume Bouvier
+guillaume.bouvier{at}ens-cachan.org
+
 ## Research experience:
 
 ### From 2010: Post-doctoral position
