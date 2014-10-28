@@ -25,7 +25,7 @@ bin of the SOM. However the SOM algorithm try to sparse date homogeneously
 within the map. The basic idea here is to smooth the histogram of the SOM. To
 do this each input data is not attributed to a unique cell but to an ensemble
     of cells. The number of cells in the ensemble is determined by the
-    smoothing parameter s. This idea come from [this document](http://www.ifs.tuwien.ac.at/ifs/research/pub_pdf/pam_icann02.pdf).
+    smoothing parameter $$s$$. This idea come from [this document](http://www.ifs.tuwien.ac.at/ifs/research/pub_pdf/pam_icann02.pdf).
 
 The ipython notebook import:
 
@@ -148,7 +148,10 @@ scatter(input_dist[:,1], input_dist[:,0], c=density, linewidths=0, cmap=cm.gray_
 
 ![png](/assets/smooth_data_histograms_files/smooth_data_histograms_20_1.png)
 
-Now we compute the smooth data histogram (SDH):
+Now we compute the smooth data histogram (SDH).
+The membership degree is $$s/c_{s}$$ to the closest bin, $$(s-1)/c_{s}$$ to the second, $$(s-2)/c_{s}$$ to the third and so forth.
+The membership to all but the closest $$s$$ bins is 0.
+$$c_{s}$$ is defined as: $$c_{s}=\sum_{i=0}^{s-1}s-i$$
 
 {% highlight python %}
 def sdh(smap, inputmat, s=8):
