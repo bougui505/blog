@@ -158,9 +158,9 @@ def sdh(smap, inputmat, s=8):
     """
     return the smooth data histogram of the SOM density
     """
-    x,y = smap[:,:,0].shape
+    x,y,n = smap.shape
     sdhmat = zeros(x*y)
-    dmat = scipy.spatial.distance.cdist(inputmat, smap.reshape(x*y,2))
+    dmat = scipy.spatial.distance.cdist(inputmat, smap.reshape(x*y,n))
     #hmat = dmat.argsort(axis=1)[:,:s] # hit matrix
     c = float(arange(1,s+1).sum())
     for ds in dmat:
