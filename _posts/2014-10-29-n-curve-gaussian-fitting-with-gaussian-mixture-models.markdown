@@ -5,7 +5,10 @@ category: python
 date: 2014-10-29 11:42:42 CET
 tags:
 - python
+- scikit-learn
 ---
+
+# n-curve Gaussian fitting with Gaussian mixture models
 
 Here a copy of an answer I gave on [stackoverflow](http://stackoverflow.com/questions/10143905/python-two-curve-gaussian-fitting-with-non-linear-least-squares/19182915#19182915)
 
@@ -28,7 +31,7 @@ plotgauss1(histdist[1])
 plotgauss2(histdist[1])
 {% endhighlight %}
 
-![Gaussian mixture model](assets/SPZFP.png)
+![Gaussian mixture model](/assets/SPZFP.png)
 
 You can also use the function below to fit the number of Gaussian you want with ncomp parameter:
 
