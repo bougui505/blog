@@ -174,6 +174,7 @@ def sdh(smap, inputmat, s=8):
 For large dataset you can run out of memory when you compute the full distance matrix `dmat` with `scipy.spatial.distance.cdist(inputmat, smap.reshape(x*y,n))`.
 Instead of computing `dmat` you can use [KDTree](http://docs.scipy.org/doc/scipy-0.13.0/reference/generated/scipy.spatial.KDTree.html) or [cKDTree](http://docs.scipy.org/doc/scipy-0.13.0/reference/generated/scipy.spatial.cKDTree.html).
 This class provides an index into a set of k-dimensional points which can be used to rapidly look up the nearest neighbors of any point.
+In the function below I've also added the data parameter to project a weighted sum of the data with the rule exposed before.
 
 {% highlight python %}
 def sdh(smap, inputmat, s=8, data=None):
