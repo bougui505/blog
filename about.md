@@ -12,7 +12,7 @@ guillaume.bouvier{at}ens-cachan.org
 
 ### From 2010: Post-doctoral position
 
-- Institut Pasteur, Unité de Bioinformatique Structurale - Paris, France.
+- Institut Pasteur, [Structural Bioinformatics Unit](http://www.pasteur.fr/recherche/unites/Binfs) - Paris, France.
     - Protein dynamic, ligand docking and virtual screening.
     - Machine learning and non-linear dimensionality reduction of protein conformational space.
 
