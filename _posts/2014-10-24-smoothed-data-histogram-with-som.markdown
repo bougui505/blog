@@ -171,6 +171,32 @@ def sdh(smap, inputmat, s=8):
     return sdhmat
 {% endhighlight %}
 
+For large dataset you can run out of memory when you compute the full distance matrix `dmat` with `scipy.spatial.distance.cdist(inputmat, smap.reshape(x*y,n))`.
+Instead of computing `dmat` you can use [KDTree](http://docs.scipy.org/doc/scipy-0.13.0/reference/generated/scipy.spatial.KDTree.html) or [cKDTree](http://docs.scipy.org/doc/scipy-0.13.0/reference/generated/scipy.spatial.cKDTree.html).
+This class provides an index into a set of k-dimensional points which can be used to rapidly look up the nearest neighbors of any point.
+
+{% highlight python %}
+def sdh(smap, inputmat, s=8, data=None):
+    """
+    Return the smooth data histogram of the SOM density.
+    If data is not None return the smoothed projection of the data onto the map
+    """
+    x,y,n = smap.shape
+    sdhmat = zeros(x*y)
+    kdtree = scipy.spatial.cKDTree(smap.reshape(x*y,n))
+    c = float(arange(1,s+1).sum())
+    ds,ls = kdtree.query(inputmat,k=s)
+    for i,d in enumerate(ds):
+        l = ls[i]
+        for j,ind in enumerate(l):
+            if data == None:
+                sdhmat[ind] += (s-j)/c
+            else:
+                sdhmat[ind] += (s-j)*data[i]/c
+    sdhmat = sdhmat.reshape((x,y))
+    return sdhmat
+{% endhighlight %}
+
 And we choose a smoothing parameter `s` of 16
 
 {% highlight python %}
