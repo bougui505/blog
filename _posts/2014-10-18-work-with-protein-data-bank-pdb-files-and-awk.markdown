@@ -8,6 +8,8 @@ tags:
 - pdb
 ---
 
+# Work with protein data bank (pdb) files and awk
+
 - Format a pdb with awk for fields: [ATOM] [Atom  serial number] [Atom name] [Residue name] [Chain identifier] [Residue sequence number] [x] [y] [z]
 
 {% highlight bash %}
@@ -19,4 +21,10 @@ awk '{if ($1=="ATOM") printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,$2,$3,$4
 
 {% highlight bash %}
 awk '$0 ~ /ATOM      1/ {i++} {print >> "pdbs/out_"i".pdb"} {fflush("pdbs/out_"i".pdb")}' filename.pdb
+{% endhighlight %}
+
+- If you want 100 structures per output file
+
+{% highlight bash %}
+awk '$0 ~ /ATOM 1/ {i++} {print >> "pdbs/smap_"int(i/100)".pdb"} {fflush("pdbs/smap_"int(i/100)".pdb")}' smap.pdb
 {% endhighlight %}
