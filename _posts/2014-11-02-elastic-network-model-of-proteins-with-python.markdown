@@ -17,7 +17,7 @@ $$ U(r) = \frac{1}{2}(r-R) \cdot K(r) \cdot (r-R)$$
 with $$R$$ a $$3N$$ dimensional vector ($$N$$ is the number of atoms) of the stable
 conformation and the $$r$$ the same object of the current conformation.
 
-$K$$ is the Hessian matrix of U:
+$$K$$ is the Hessian matrix of $$U$$:
 
 $$ K_{ij} = \frac{\partial^2 U}{\partial r_{i} \partial r_{j}}$$
 
@@ -33,7 +33,7 @@ and
 
 $$ s_{ij}^o = \|R_i-R_j\| $$
 
-Now we can define the second derivative of $$V$:
+Now we can define the second derivative of $$V$$:
 
 $$ {\partial^2 V_{ij}\over\partial{x_i}^2} = {k\over {s_{ij}}^2} {(x_j - x_i)}^2
 $$
@@ -43,7 +43,7 @@ and
 $$ {\partial^2 V_{ij}\over\partial x_i\partial y_j} = {-k\over {s_{ij}}^2} {(x_j
 - x_i)}{(y_j-y_i)} $$
 
-which allows us to define the Hessian matrix $$K$:
+which allows us to define the Hessian matrix $$K$$:
 
 $$ K_{ij} = \begin{bmatrix}  {\partial^2 V_{ij}\over\partial x_i\partial x_j} &
 {\partial^2 V_{ij}\over\partial x_i\partial y_j} & {\partial^2
@@ -90,7 +90,7 @@ And we load the pdb structure with only $$C_\alpha$$ atoms.
 struct = IO.Structure('data/1E4E-prot-CA.pdb')
 {% endhighlight %}
 
-Now we extract the coordinates of the $$C_\alpha$$ atoms ($R$):
+Now we extract the coordinates of the $$C_\alpha$$ atoms ($$R$$):
 
 
 {% highlight python %}
@@ -181,7 +181,7 @@ grid()
 
 
 Then, we can compute the covariance and correlation matrix from the inverse of
-the Hessian matrix $$K$:
+the Hessian matrix $$K$$:
 
 $$ K^{-1} = \sum_{i=7}^{3N} \frac{v_{i} \cdot v_{i}^{T}}{\lambda_{i}} $$
 
@@ -195,8 +195,8 @@ for i in range(6,3*N):
     hessian_inv += (dot(v[:,i][:,None],v[:,i][:,None].T)/w[i])
 {% endhighlight %}
 
-The element of the covariance matrix is given by the trace of each $$3 \times 3$
-super element of $$K$. The diagonal of the covariance matrix give the amplitude
+The element of the covariance matrix is given by the trace of each $$3 \times 3$$
+super element of $$K$$. The diagonal of the covariance matrix give the amplitude
 of the fluctuation for each considered atom of the system.
 
 
