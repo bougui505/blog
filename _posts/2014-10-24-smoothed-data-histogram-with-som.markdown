@@ -199,7 +199,7 @@ def sdh(smap, inputmat, s=8, data=None):
 {% endhighlight %}
 
 I've slightly changed the function to apply a distance cutoff
-`distances_threshold` instead of a cutoff on the number of bins ($s$):
+`distances_threshold` instead of a cutoff on the number of bins ($$s$$):
 
 {% highlight python %}
 def sdh(smap, inputmat, s=8, distances_threshold=None, data=None):
