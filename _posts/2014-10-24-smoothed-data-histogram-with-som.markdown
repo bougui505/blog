@@ -25,7 +25,7 @@ bin of the SOM. However the SOM algorithm try to sparse date homogeneously
 within the map. The basic idea here is to smooth the histogram of the SOM. To
 do this each input data is not attributed to a unique cell but to an ensemble
     of cells. The number of cells in the ensemble is determined by the
-    smoothing parameter $$s$$. This idea come from [this document](http://www.ifs.tuwien.ac.at/ifs/research/pub_pdf/pam_icann02.pdf).
+    smoothing parameter $$s$$. This idea come from [this document: Using Smoothed Data Histograms for Cluster Visualization in Self-Organizing Maps](http://www.ifs.tuwien.ac.at/ifs/research/pub_pdf/pam_icann02.pdf).
 
 The ipython notebook import:
 
