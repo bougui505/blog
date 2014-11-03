@@ -15,7 +15,7 @@ A harmonic potential well has the form:
 $$ U(r) = \frac{1}{2}(r-R) \cdot K(r) \cdot (r-R)$$
 
 with $$R$$ a $$3N$$ dimensional vector ($$N$$ is the number of atoms) of the stable
-conformation and the $$r$$ the same object of the current conformation.
+conformation and $$r$$ the same object of the current conformation.
 
 $$K$$ is the Hessian matrix of $$U$$:
 
@@ -278,7 +278,7 @@ title('Normal mode #2')
 
 
 The first mode is predominated by the movement of a losely connected loop. The
-2nd mode arise a more correlated global motion.
+2nd mode arises a more correlated global motion.
 
 Below an interpolation along the second mode:
 
