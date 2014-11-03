@@ -12,7 +12,7 @@ tags:
 
 I used this two documents to write this post:
 
-- [Low-frequency normal modes of proteins. Yves-Henri Sanejouand. Biological Physics. Université Claude Bernard - Lyon I, 2007. French. <tel-00258781>](https://tel.archives-ouvertes.fr/file/index/docid/258781/filename/hdr2007.pdf)
+- [Low-frequency normal modes of proteins. Yves-Henri Sanejouand. Biological Physics. Université Claude Bernard - Lyon I, 2007. In french.](https://tel.archives-ouvertes.fr/file/index/docid/258781/filename/hdr2007.pdf)
 - [Normal mode theory and harmonic potential approximations. Konrad Hinsen](http://www.pasteur.fr/recherche/unites/Binfs/EMBO2004/coursenotes/hinsen_normal_modes.pdf)
 
 A harmonic potential well has the form:
