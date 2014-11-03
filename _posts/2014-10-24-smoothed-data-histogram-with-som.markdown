@@ -198,6 +198,43 @@ def sdh(smap, inputmat, s=8, data=None):
     return sdhmat
 {% endhighlight %}
 
+I've slightly changed the function to apply a distance cutoff
+`distances_threshold` instead of a cutoff on the number of bins ($s$):
+
+{% highlight python %}
+def sdh(smap, inputmat, s=8, distances_threshold=None, data=None):
+    """
+    Return the smooth data histogram of the SOM density.
+    If data is not None return the smoothed projection of the data onto the map
+    If distances_threshold is not none apply a distance cutoff instead of a fix number of cells
+    """
+    x,y,n = smap.shape
+    sdhmat = zeros(x*y)
+    kdtree = scipy.spatial.cKDTree(smap.reshape(x*y,n))
+    c = float(arange(1,s+1).sum())
+    if distances_threshold == None:
+        ds,ls = kdtree.query(inputmat,k=s) 
+        for i,d in enumerate(ds):
+            l = ls[i]
+            for j,ind in enumerate(l):
+                if data == None:
+                    sdhmat[ind] += (s-j)/c
+                else:
+                    sdhmat[ind] += (s-j)*data[i]/c
+    else:
+        for v in inputmat:
+            l = kdtree.query_ball_point(v, distances_threshold)
+            s = len(l)
+            c = float(arange(1,s+1).sum())
+            for j, ind in enumerate(l):
+                if data == None:
+                    sdhmat[ind] += (s-j)/c
+                else:
+                    sdhmat[ind] += (s-j)*data[i]/c
+    sdhmat = sdhmat.reshape((x,y))
+    return sdhmat
+{% endhighlight %}
+
 And we choose a smoothing parameter `s` of 16
 
 {% highlight python %}
