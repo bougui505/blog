@@ -5,7 +5,6 @@ category: awk
 date: 2014-11-06 14:07:18 CET
 tags:
 - awk
-- python
 ---
 
 # Do not display long line with awk: usage with IPython notebooks
