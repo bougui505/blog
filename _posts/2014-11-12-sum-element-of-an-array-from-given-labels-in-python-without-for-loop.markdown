@@ -1,5 +1,5 @@
 ---
-title: "Sum elements of an array from given labels in python without for loop"
+title: "Sum elements of an array from given labels, in python, without for loop"
 layout: default
 category: python
 date: 2014-11-12 18:05:49 CET
