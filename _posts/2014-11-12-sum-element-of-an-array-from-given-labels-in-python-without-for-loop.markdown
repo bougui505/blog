@@ -7,7 +7,7 @@ tags:
 - python
 ---
 
-# Sum elements of an array from given labels in python without for loop
+# Sum elements of an array from given labels, in python, without for loop
 
 'For loops' are slow in python.
 That's why it's better to use numpy or scipy functions.
