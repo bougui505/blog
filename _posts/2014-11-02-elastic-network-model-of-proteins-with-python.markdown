@@ -15,9 +15,11 @@ I used this two documents to write this post:
 - [Low-frequency normal modes of proteins. Yves-Henri Sanejouand. Biological Physics. Université Claude Bernard - Lyon I, 2007. In french.](https://tel.archives-ouvertes.fr/file/index/docid/258781/filename/hdr2007.pdf)
 - [Normal mode theory and harmonic potential approximations. Konrad Hinsen](http://www.pasteur.fr/recherche/unites/Binfs/EMBO2004/coursenotes/hinsen_normal_modes.pdf)
 
-Another document of interest:
+Other document of interest:
 
 - [Normal modes and essential dynamics. Steven Hayward and Bert L. de Groot](http://www3.mpibpc.mpg.de/groups/de_groot/pdf/Hayward_deGroot_nm_ed.pdf)
+
+- [Exploring the energy landscape](http://www.engr.ucsb.edu/~shell/che210d/Exploring_the_energy_landscape.pdf)
 
 A harmonic potential well has the form:
 
