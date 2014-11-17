@@ -55,7 +55,7 @@ def muller_potential(x, y, use_numpy=False):
     return value
 {% endhighlight %}
 
-Which look like:
+Which looks like:
 
 {% highlight python %}
 minx=-1.5
