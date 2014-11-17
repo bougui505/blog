@@ -61,13 +61,14 @@ This potential is then sampled using a Monte-Carlo
 {% highlight python %}
 def montecarlo(potential=E, nstep=1000, beta=1, markov=True):
     p = lambda x: exp(-beta*x)
-    pos_prev = np.random.randint(0,50,size=2)
+    nx,ny = potential.shape
+    pos_prev = (np.random.randint(0,nx), np.random.randint(0,ny))
     traj = []
     for i in range(nstep):
         if markov:
-            pos = (pos_prev + asarray([random.choice([-1,0,1]), random.choice([-1,0,1])]))%50
+            pos = (pos_prev + asarray([random.choice([-1,0,1]), random.choice([-1,0,1])]))%(nx,ny)
         else:
-            pos = np.random.randint(0,50, size=2)
+            pos = (np.random.randint(0,nx), np.random.randint(0,ny))
         pos = tuple(pos)
         pos_prev = tuple(pos_prev)
         delta = potential[pos] - potential[pos_prev]
