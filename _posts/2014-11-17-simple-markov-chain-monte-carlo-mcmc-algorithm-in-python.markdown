@@ -8,6 +8,8 @@ tags:
 - python
 ---
 
+# Simple Markov chain Monte Carlo (MCMC) algorithm in python
+
 I present here a simple Markov chain Monte Carlo python implementation to sample
 a 2D surface of potential.
 
