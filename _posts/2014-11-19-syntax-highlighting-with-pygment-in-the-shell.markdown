@@ -1,5 +1,5 @@
 ---
-title: "Syntax highlighting with pygment in the shell"
+title: "Syntax highlighting with pygments in the shell"
 layout: default
 category: linux
 date: 2014-11-19 07:53:21 CET
@@ -7,7 +7,7 @@ tags:
 - linux
 ---
 
-# Syntax highlighting with pygment in the shell
+# Syntax highlighting with pygments in the shell
 
 First install Pygments:
 
