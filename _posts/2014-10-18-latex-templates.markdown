@@ -11,6 +11,7 @@ tags:
 
 {% highlight latex %}
 \documentclass[a4paper,10pt]{article}
+\usepackage{graphicx} % for including graphics with easy resizing
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel} 
@@ -38,6 +39,7 @@ Bla bla bla
 
 {% highlight latex %}
 \documentclass[a4paper,10pt]{report}
+\usepackage{graphicx} % for including graphics with easy resizing
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel} 
@@ -72,6 +74,7 @@ Bla\index{bla} bla bla
 
 {% highlight latex %}
 \documentclass{book}
+\usepackage{graphicx} % for including graphics with easy resizing
  
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
