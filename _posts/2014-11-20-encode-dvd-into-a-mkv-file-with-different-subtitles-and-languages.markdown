@@ -79,11 +79,11 @@ The full script below:
 #!/usr/bin/env sh
 mtitle="the_movie_title"
 mkdir $mtitle
-track=1
-aid1=128
-aid2=129
-sid1=1
-sid2=2
+track=1 # track to encode
+aid1=128 # first audio track
+aid2=129 # second audio track
+sid1=1 # first subtitles track
+sid2=2 # second subtitles track
 # English
 mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/english.mp3
 # French
