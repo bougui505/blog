@@ -101,3 +101,16 @@ mv $mtitle.mkv ../.
 # Eject the DVD:
 eject /dev/dvd 2> /dev/null
 {% endhighlight %}
+
+To encode audio and video simultaneously:
+
+{% highlight bash %}
+#!/usr/bin/env sh
+mtitle="the_movie_title"
+track=1
+aid1=128
+sid1=1 # 1000 for no subtitles
+mencoder dvd://$track -dvd-device /dev/dvd -sid $sid1 -aid $aid1 -oac mp3lame -ovc x264 -o "$mtitle.avi"
+# Eject the DVD:
+eject /dev/dvd 2> /dev/null
+{% endhighlight %}
