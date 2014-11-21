@@ -79,20 +79,21 @@ The full script below:
 #!/usr/bin/env sh
 mtitle="the_movie_title"
 mkdir $mtitle
+track=1
 aid1=128
 aid2=129
 sid1=1
 sid2=2
 # English
-mencoder dvd://1 -dvd-device /dev/dvd  -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/english.mp3
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/english.mp3
 # French
-mencoder dvd://1 -dvd-device /dev/dvd  -aid $aid2 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/french.mp3
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/french.mp3
 # English subtitles
-mencoder dvd://1 -dvd-device /dev/dvd  -aid $aid1 -sid $sid1 -vobsubout $mtitle/subtitles_english -nosound -ovc frameno -o /dev/null
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -sid $sid1 -vobsubout $mtitle/subtitles_english -nosound -ovc frameno -o /dev/null
 # French subtitles
-mencoder dvd://1 -dvd-device /dev/dvd  -aid $aid2 -sid $sid2 -vobsubout $mtitle/subtitles_french -nosound -ovc frameno -o /dev/null
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -sid $sid2 -vobsubout $mtitle/subtitles_french -nosound -ovc frameno -o /dev/null
 # Video without sound and subtitle
-mencoder dvd://1 -dvd-device /dev/dvd  -sid 1000 -ovc x264 -nosound -o "$mtitle/video.avi"
+mencoder dvd://$track -dvd-device /dev/dvd  -sid 1000 -ovc x264 -nosound -o "$mtitle/video.avi"
 # The merging:
 cd $mtitle
 mkvmerge -o $mtitle.mkv video.avi english.mp3 french.mp3 subtitles_english.idx subtitles_french.idx
