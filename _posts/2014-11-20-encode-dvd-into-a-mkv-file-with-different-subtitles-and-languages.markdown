@@ -86,19 +86,19 @@ aid1=128 # first audio track
 aid2=129 # second audio track
 sid1=1 # first subtitles track
 sid2=2 # second subtitles track
-# English
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/english.mp3
-# French
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/french.mp3
-# English subtitles
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -sid $sid1 -vobsubout $mtitle/subtitles_english -nosound -ovc frameno -o /dev/null
-# French subtitles
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -sid $sid2 -vobsubout $mtitle/subtitles_french -nosound -ovc frameno -o /dev/null
+# first audio track
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/audio1.mp3
+# second audio track
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/audio2.mp3
+# first subtitles track
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -sid $sid1 -vobsubout $mtitle/subtitles1 -nosound -ovc frameno -o /dev/null
+# second subtitles track
+mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -sid $sid2 -vobsubout $mtitle/subtitles2 -nosound -ovc frameno -o /dev/null
 # Video without sound and subtitle
 mencoder dvd://$track -dvd-device /dev/dvd  -sid 1000 -ovc x264 -nosound -o "$mtitle/video.avi"
 # The merging:
 cd $mtitle
-mkvmerge -o $mtitle.mkv video.avi english.mp3 french.mp3 subtitles_english.idx subtitles_french.idx
+mkvmerge -o $mtitle.mkv video.avi audio*.mp3 subtitles*.idx
 mv $mtitle.mkv ../.
 # Eject the DVD:
 eject /dev/dvd 2> /dev/null
