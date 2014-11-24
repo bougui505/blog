@@ -57,15 +57,15 @@ The same for the subtitles:
 
 {% highlight bash %}
 # English subtitles
-mencoder dvd://1 -dvd-device /dev/dvd  -aid 128 -sid 1 -vobsubout $mtitle/subtitles_english -nosound -ovc frameno -o /dev/null
+mencoder dvd://1 -dvd-device /dev/dvd -sid 1 -vobsubout $mtitle/subtitles_english -nosound -ovc frameno -o /dev/null
 # French subtitles
-mencoder dvd://1 -dvd-device /dev/dvd  -aid 129 -sid 2 -vobsubout $mtitle/subtitles_french -nosound -ovc frameno -o /dev/null
+mencoder dvd://1 -dvd-device /dev/dvd -sid 2 -vobsubout $mtitle/subtitles_french -nosound -ovc frameno -o /dev/null
 {% endhighlight %}
 
-And now the video without sound and subtitles:
+And now the video without sound and subtitles (we put -sid 1000 to be sure to not have subtitles. Some DVD put subtitles as default.):
 
 {% highlight bash %}
-mencoder dvd://1 -dvd-device /dev/dvd  -sid 999 -ovc x264 -nosound -o "$mtitle/video.avi"
+mencoder dvd://1 -dvd-device /dev/dvd  -sid 1000 -ovc x264 -nosound -o "$mtitle/video.avi"
 {% endhighlight %}
 
 Now we can merge all the files in the mkv file:
@@ -87,15 +87,15 @@ aid2=129 # second audio track
 sid1=1 # first subtitles track
 sid2=2 # second subtitles track
 # first audio track
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/audio1.mp3
+mencoder dvd://$track -dvd-device /dev/dvd -aid $aid1 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/audio1.mp3
 # second audio track
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/audio2.mp3
+mencoder dvd://$track -dvd-device /dev/dvd -aid $aid2 -of rawaudio -oac mp3lame -ovc copy -o $mtitle/audio2.mp3
 # first subtitles track
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid1 -sid $sid1 -vobsubout $mtitle/subtitles1 -nosound -ovc frameno -o /dev/null
+mencoder dvd://$track -dvd-device /dev/dvd -sid $sid1 -vobsubout $mtitle/subtitles1 -nosound -ovc frameno -o /dev/null
 # second subtitles track
-mencoder dvd://$track -dvd-device /dev/dvd  -aid $aid2 -sid $sid2 -vobsubout $mtitle/subtitles2 -nosound -ovc frameno -o /dev/null
+mencoder dvd://$track -dvd-device /dev/dvd -sid $sid2 -vobsubout $mtitle/subtitles2 -nosound -ovc frameno -o /dev/null
 # Video without sound and subtitle
-mencoder dvd://$track -dvd-device /dev/dvd  -sid 1000 -ovc x264 -nosound -o "$mtitle/video.avi"
+mencoder dvd://$track -dvd-device /dev/dvd -sid 1000 -ovc x264 -nosound -o "$mtitle/video.avi"
 # The merging:
 cd $mtitle
 mkvmerge -o $mtitle.mkv video.avi audio*.mp3 subtitles*.idx
