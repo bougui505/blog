@@ -14,12 +14,19 @@ What is `latexdiff` ?
 Below the description of the debian package:
 
 Package: latexdiff
+
 Version: 0.5-4
+
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+
 Architecture: all
+
 Depends: perl
+
 Recommends: texlive-latex-base, texlive-latex-extra
+
 Suggests: subversion | cvs | rcs
+
 Description-en: utility to mark up significant differences between LaTeX files
 latexdiff compares two LaTeX files and marks up significant differences
 between them (i.e. a diff for LaTeX files). It generates a new LaTeX file
@@ -33,6 +40,7 @@ A rudimentary revision facilility is provided by another Perl script,
 'latexrevise', which accepts or rejects all changes. Manual editing of the
 difference file can be used to override this default behaviour and accept or
 reject selected changes only.
+
 [Homepage](http://bullard.esc.cam.ac.uk/~tilmann/soft.html)
 
 First install `latexdiff`
