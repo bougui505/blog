@@ -17,8 +17,6 @@ Below the description of the debian package:
 > 
 > Version: 0.5-4
 > 
-> Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
-> 
 > Architecture: all
 > 
 > Depends: perl
