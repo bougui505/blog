@@ -39,7 +39,7 @@ Below the description of the debian package:
 > difference file can be used to override this default behaviour and accept or
 > reject selected changes only.
 > 
-> Homepage: http://bullard.esc.cam.ac.uk/~tilmann/soft.html
+> Homepage: [http://bullard.esc.cam.ac.uk/~tilmann/soft.html](http://bullard.esc.cam.ac.uk/~tilmann/soft.html)
 
 First install `latexdiff`
 
