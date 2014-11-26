@@ -6,6 +6,8 @@ permalink: /about/
 
 ### Guillaume Bouvier
 
+![photo_id](/assets/photo_id_128.jpg)
+
 guillaume.bouvier{at}ens-cachan.org
 
 ## Research experience:
