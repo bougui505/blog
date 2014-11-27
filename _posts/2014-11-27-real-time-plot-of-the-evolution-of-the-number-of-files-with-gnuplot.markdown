@@ -16,7 +16,7 @@ Usage example to monitor the number of files `dms/smap_*_no_H.dms`
 $ ./file_monitor.sh dms/smap_\*_no_H.dms
 {% endhighlight %}
 
-## `file_monitor.sh`
+## The main script: `file_monitor.sh`
 
 {% highlight bash %}
 #!/bin/bash
@@ -46,7 +46,7 @@ while true
 /bin/rm $outfile
 {% endhighlight %}
 
-## `loop.plt`
+## The gnuplot script: `loop.plt`
 
 {% highlight bash %}
 set grid
@@ -57,4 +57,32 @@ plot '/dev/shm/nfiles.txt' using 1:2 with linespoints#, fitline(x)
 pause 2
 replot
 reread
+{% endhighlight %}
+
+## To monitor the number of qsub jobs: `qstat_monitor.sh`
+
+{% highlight bash %}
+#!/bin/bash
+# -*- coding: UTF8 -*-
+outfile=/dev/shm/nfiles.txt
+t_0=$(date +"%s")
+for i in $(seq 1 2)
+do
+t=$(date +"%s")
+delta_t=$(($t-$t_0))
+nfiles=$(qstat -u $USER | grep $USER | wc -l)
+echo $delta_t $nfiles >> $outfile
+sleep 20
+done
+gnuplot loop.plt &
+while true
+    do
+        t=$(date +"%s")
+        delta_t=$(($t-$t_0))
+        nfiles=$(qstat -u $USER | grep $USER | wc -l)
+        echo $delta_t $nfiles >> $outfile
+        trap "echo Exited!; break" SIGINT
+        sleep 20
+    done
+/bin/rm $outfile
 {% endhighlight %}
