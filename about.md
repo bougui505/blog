@@ -21,6 +21,7 @@ guillaume.bouvier{at}ens-cachan.org
 ### 2007-2010: PhD student
 
 - Laboratoire de Chimie et de Biochimie Pharmacologiques et Toxicologiques (UMR8601 CNRS).
+    - [Thèse de doctorat: Étude d'inhibiteurs de l'intégrase du VIH-1 par RMN et modélisation moléculaire. Développement et validation d'un outil de criblage virtuel](/assets/These_Guillaume_Bouvier.pdf)
     - Nuclear Magnetic resonance (NMR) of protein ligand interactions.
     - Virtual screening and molecular modeling.
 
