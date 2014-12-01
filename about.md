@@ -33,3 +33,26 @@ guillaume.bouvier{at}ens-cachan.org
 
 - Agrégé de Biochimie Génie biologique (2006)
 
+--------------------------------------------------------------------
+
+Below my pgp public key:
+
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
+    Version: GnuPG v1.4.12 (GNU/Linux)
+
+    mQENBFR4L0UBCADx2/RLxw4mNWakdyLiVdDzetF5oifyL2MPA6t1h8LbnB+6gHg1
+    TCmdjjaZnLHHmmkU0/5PlU7ceMU4HgGvPiKuNJocfaDpixdf0Pqe7FrllPzOSNNp
+    4ljasTRbULLA2hiTGhZ6+LnKZjrCoEf0RunZjlwJ28Vf5BqD4HkuwMnpjSLJYEVi
+    6B1htjP6XDAVW3Bs51Sl6eHlrd5eZNd4wjNAnYa4NWyiYctWy11pn5wpnbrvli9D
+    isGZxCajaTAS4NOUi//jL5SywX3/laBfwz8HPYQrrRFJoEKAydVEDoLo7OKwiUog
+    TsjlQ6v1WGLYgvRayd3CR/hF1mo9jV+mtQu7ABEBAAG0J0d1aWxsYXVtZSBCb3V2
+    aWVyIDxib3VndWk1MDVAZ21haWwuY29tPokBOAQTAQIAIgUCVHgvRQIbAwYLCQgH
+    AwIGFQgCCQoLBBYCAwECHgECF4AACgkQdESH6ha4BLZd3wgAk2dhvb6yyAnx27U1
+    NIpvMOX/EuokD+TokBN4y9xBdrCDlYRAucYs2SMTkvcUDSRO7L6ovJ9P6VjoEIhO
+    ZpvC0bzPDe1HWOYxxgo8Vz3O+2twNy75RlLN863ryoJfPe0C96pkkm/c0/47KanE
+    6sdwu73J44XX/Gg5iu9YhNAsjL72bF4NiivuRoiN+NleHAd0vezq27zTbvQi0TtE
+    WFkG+EvDXHEKm+IUqV+rcFnZCPpT7smzADSoO2IvjkIVr0KI0HbJkvCkLOOSG00x
+    GcJ/r3RmIpXWgcnc+0ckpQ2ifO0ktstv/XTfr8NzSaNveStbrJEVqcf1YYWqVhRI
+    hGJQTg==
+    =oO2+
+    -----END PGP PUBLIC KEY BLOCK-----
