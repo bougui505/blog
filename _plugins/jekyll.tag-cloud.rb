@@ -72,7 +72,7 @@ module Jekyll
       end
 
       # sort by alhabetical order
-      weight.sort_by!{|word| word.downcase}
+      weight.sort_by!{|name, count| name[0].downcase}
 
       # reduce the Array of [tag name, tag weight] pairs to HTML
       weight.reduce("") do |html, tag|
