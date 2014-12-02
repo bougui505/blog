@@ -71,8 +71,8 @@ module Jekyll
         [name, weight]
       end
 
-      # sort by alhabetical order or uncomment the end of the following line to shuffle the [tag name, tag weight] pairs
-      weight.sort_by!# { rand }
+      # sort by alhabetical order
+      weight.sort_by!{|word| word.downcase}
 
       # reduce the Array of [tag name, tag weight] pairs to HTML
       weight.reduce("") do |html, tag|
