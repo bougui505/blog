@@ -10,6 +10,8 @@ tags:
 
 # Adaptive sampling of a 2D surface potential by Markov Chain Monte Carlo with python
 
+The code below reproduce an example given in the [folding@home](https://folding.stanford.edu/home/adaptive-sampling-movie) web site.
+
 {% highlight python %}
 %pylab inline
 import matplotlib.gridspec as gridspec
