@@ -14,7 +14,7 @@ You can use git for this versioning but it's not convenient to initialize the re
 
 Below, it's a little shell script to automatize the backup process:
 
-{% include_code [git_backup.sh] [lang:bash] https://raw.githubusercontent.com/bougui505/git_backup/master/git_backup.sh %}
+{% gist a572fe58168603fc3fed %}
 
 The usage is very simple.
 If you want to backup a file in the current working directory:
