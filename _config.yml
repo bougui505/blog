@@ -19,3 +19,6 @@ paginate_path: "blog/page:num"
 scholar:
     sort_by: year
     order: descending
+
+gems:
+  - jekyll-redirect-from
