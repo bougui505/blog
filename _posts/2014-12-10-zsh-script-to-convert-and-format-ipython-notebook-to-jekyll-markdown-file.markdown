@@ -16,7 +16,8 @@ iPython notebooks are very convenient for blogging.
 However some manual operations are required to format the resulting file:
 
 - Adding the YAML header for jekyll
-- Add the liquid tags for python syntax highlighting.
+- Add the liquid tags for python syntax highlighting
+- Change the path to the `png` image files
 
 Below is the script to automatically format an `ipynb` file to jekyll markdown:
 
