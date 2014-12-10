@@ -9,6 +9,7 @@ tags:
 - jekyll
 - python
 ---
+# zsh script to convert and format iPython notebook to jekyll markdown file
 
 iPython notebooks are very convenient for blogging.
 `nbconvert` can easily convert `ipynb` file to markdown.
