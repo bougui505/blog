@@ -21,5 +21,5 @@ Below is the script to automatically format an `ipynb` file to jekyll markdown:
 
 {% gist ddf7a6a5ffede1d17fc9 %}
 
-Usage: ./ipynb_to_jekyll.sh ipynbfile "Title of the post"
+Usage: `./ipynb_to_jekyll.sh ipynbfile "Title of the post"`
 
