@@ -1,6 +1,7 @@
 ---
 title: "Transition networks with python"
 layout: default
+redirect_from: transition_networks.html
 category: python
 date: 2014-10-21 15:17:48 CEST
 tags:

@@ -1,6 +1,7 @@
 ---
 title: "Adaptive sampling of a 2D surface potential by Markov Chain Monte Carlo with python"
 layout: default
+redirect_from: adaptive_sampling.html
 category: science
 date: 2014-12-02 14:36:50 CET
 tags:

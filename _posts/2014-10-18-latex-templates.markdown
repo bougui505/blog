@@ -15,10 +15,10 @@ tags:
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel} 
-\usepackage{times} % Pour changer le pack de police
-\author{\textsc{Nom} Prénom}
+\usepackage{times} % font
+\author{\textsc{Name} Firstname}
 \date{\today} 
-\title{Mon titre d'article}
+\title{Title}
 
 
 \begin{document}
@@ -26,12 +26,13 @@ tags:
 \maketitle
 
 \begin{abstract}
-Le résumé (abstract en anglais) de mon article.
+Abstract
 \end{abstract}
 
-Bla bla bla
+Text
 
-
+\bibliographystyle{apalike}
+\bibliography{thebibfile}
 \end{document}
 {% endhighlight %}
 
@@ -43,11 +44,11 @@ Bla bla bla
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel} 
-\usepackage{times} % Pour changer le pack de police
+\usepackage{times} % font
 \usepackage{makeidx}
 \title{Le titre}
-\author{\textsc{Nom} Prénom}
-\date{} % Pour mettre la date du jour, tapez \today 
+\author{\textsc{Name} Firstname}
+\date{\today}
 
 \makeindex
 \begin{document}
@@ -55,14 +56,14 @@ Bla bla bla
 \maketitle
 
 \begin{abstract}
-Le résumé (abstract en anglais) de mon article.
+Abstract
 \end{abstract}
 
 
 \tableofcontents
 
 
-Bla\index{bla} bla bla
+The \index{text}
 
 \listoffigures
 \listoftables
@@ -79,30 +80,29 @@ Bla\index{bla} bla bla
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel} 
-\usepackage{times} % Pour changer le pack de police
+\usepackage{times} % font
 \usepackage{makeidx}
 \makeindex
 \title{Le titre}
-\author{\textsc{Nom} Prénom}
+\author{\textsc{Name} Firstname}
 \date{\today}  
  
 \begin{document}
  
-\maketitle % Page de garde
+\maketitle
 
 \frontmatter 
 
-Pages introductives
+Introductive part
 
 \mainmatter
 
-Contenu
+Text body
 
 \appendix
-   
-Chapitres annexes
-\bibliographystyle{} % Le style est mis entre crochets.
-\bibliography{bibli} % Mon fichier de base de données s'appelle bibli.bib.
+Supplementary material   
+\bibliographystyle{}
+\bibliography{bibli}
 
 \backmatter
 
