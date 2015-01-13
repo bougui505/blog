@@ -187,7 +187,7 @@ Thanks!
 """
  
 import sys
-sys.path.append('/c5/shared/pymol/1.7.0.0-python-2.7.5-shared/lib/python2.7/site-packages/')
+sys.path.append('/c5/shared/pymol/1.7.0.0-python-2.7.5-shared/lib/python2.7/site-packages/') # to edit for your personal install 
  
 import __main__
 #__main__.pymol_argv = ['pymol','-qc'] # Pymol: quiet and no GUI
@@ -233,7 +233,7 @@ print 'done'
 pymol.cmd.quit() 
 {% endhighlight %}
 
-This script requires these pymol script:
+This script requires these pymol scripts:
 
 #### `align_all.py`
 
