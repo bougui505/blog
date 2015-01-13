@@ -28,7 +28,7 @@ tags:
 
 ## Some technical remarks on how the figure has been generated...
 
-![U-matrix](assets/umat_protein_conformations.png)
+![U-matrix](/assets/umat_protein_conformations.png)
 
 ### Compute the descriptors from the trajectory in dcd format
 
@@ -97,7 +97,7 @@ umat1, umat2, umat3, umat4 = SOMTools.getUmatrix(smap[:,:,:nres]), SOMTools.getU
 umat = (numpy.sqrt(umat1)+numpy.sqrt(umat2)+numpy.sqrt(umat3)+numpy.sqrt(umat4))/nres
 {% endhighlight %}
 
-We decompose the U-matrix according to the four eigenvectors to compute the U-matrix in $$\AA$$.
+We decompose the U-matrix according to the four eigenvectors to compute the U-matrix in Angstrom.
 
 ### The Best Matching Units (BMUs)
 
@@ -170,7 +170,7 @@ plt.savefig('map.pdf')
 
 The sausage representations were obtained with pymol.
 
-[sausage](assets/sausage.png)
+![sausage](/assets/sausage.png)
 
 #### `sausage.py`
 
