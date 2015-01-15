@@ -10,6 +10,7 @@ tags:
 # Automount disk with sshfs when needed, with autofs
 
 From the [ubuntu documentation](https://help.ubuntu.com/community/Autofs)
+
 > `autofs` is a program for automatically mounting directories on an as-needed basis.
 > Auto-mounts are mounted only as they are accessed, and are unmounted after a period of inactivity.
 > Because of this, automounting NFS/Samba shares conserves bandwidth and offers better overall performance compared to static mounts via fstab.
