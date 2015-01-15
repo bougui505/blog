@@ -41,5 +41,5 @@ Then, reload autofs:
 
     sudo /etc/init.d/autofs restart
 
-When you will access to /mnt/sshfs/mydisk the disk will be automatically mount.
+When you will access to `/mnt/sshfs/mydisk` the disk will be automatically mount.
 The ssh keys must be properly!
