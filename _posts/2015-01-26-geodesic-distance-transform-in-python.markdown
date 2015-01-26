@@ -91,3 +91,4 @@ colorbar()
 
 ![png](/assets/geodesic_distance_transform_files/geodesic_distance_transform_6_1.png)
 
+If someone have a faster implementation in python, I'm interested in!
