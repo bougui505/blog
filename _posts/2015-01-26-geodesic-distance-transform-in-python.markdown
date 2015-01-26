@@ -15,16 +15,8 @@ from scipy.ndimage.morphology import distance_transform_edt
 
 {% endhighlight %}
 
-
-{% highlight python %}
-Populating the interactive namespace from numpy and matplotlib
-
-{% endhighlight %}
-
-
-
 Below, I used the Euclidean distance transform implemented in python. This
-function doesn't take into account the totpology of the surface represented by
+function doesn't take into account the topology of the surface represented by
 the mask
 
 
@@ -52,25 +44,10 @@ imshow(m, interpolation='nearest')
 
 {% endhighlight %}
 
-
-
-
-
-{% highlight python %}
-<matplotlib.image.AxesImage at 0xc5dde90>
-
-{% endhighlight %}
-
-
-
-
-
 ![png](/assets/geodesic_distance_transform_files/geodesic_distance_transform_2_1.png)
-
 
 I implemented the Dijkstra algorithm to apply a geodesic distance transform to
 the shape above:
-
 
 {% highlight python %}
 def geodesic_distance_transform(m):
@@ -100,11 +77,8 @@ def geodesic_distance_transform(m):
 
 {% endhighlight %}
 
-
-
 {% highlight python %}
 gdt = geodesic_distance_transform(m)
-
 {% endhighlight %}
 
 
@@ -115,20 +89,5 @@ colorbar()
 
 {% endhighlight %}
 
-
-
-
-
-{% highlight python %}
-<matplotlib.colorbar.Colorbar instance at 0xc8a3ef0>
-
-{% endhighlight %}
-
-
-
-
-
 ![png](/assets/geodesic_distance_transform_files/geodesic_distance_transform_6_1.png)
-
-
 
