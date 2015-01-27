@@ -53,7 +53,7 @@ the shape above:
 def geodesic_distance_transform(m):
     mask = m.mask
     visit_mask = mask.copy() # mask visited cells
-    m = distance_transform_edt(m)
+    m = m.filled(numpy.inf)
     m[m!=0] = numpy.inf
     distance_increments = numpy.asarray([sqrt(2), 1., sqrt(2), 1., 1., sqrt(2), 1., sqrt(2)])
     
