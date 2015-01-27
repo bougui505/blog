@@ -56,16 +56,13 @@ def geodesic_distance_transform(m):
     m = m.filled(numpy.inf)
     m[m!=0] = numpy.inf
     distance_increments = numpy.asarray([sqrt(2), 1., sqrt(2), 1., 1., sqrt(2), 1., sqrt(2)])
-    
+    connectivity = [(i,j) for i in [-1, 0, 1] for j in [-1, 0, 1] if (not (i == j == 0))]
     cc = unravel_index(m.argmin(), m.shape) # current_cell
     while (~visit_mask).sum() > 0:
-        neighbors = [tuple(cc - asarray([i,j])) for i in [-1, 0, 1] for j in [-1, 0, 1] if (not (i == j == 0))]
-        current_mask = asarray([~visit_mask[e] for e in neighbors])
-        neighbors = numpy.asarray([e for e in neighbors])[current_mask]
-        neighbors = [tuple(e) for e in neighbors]
-        #if len(neighbors) == 0:
-            #break
-        tentative_distance = distance_increments[current_mask]
+        neighbors = [tuple(e) for e in asarray(cc) - connectivity 
+                     if not visit_mask[tuple(e)]]
+        tentative_distance = [distance_increments[i] for i,e in enumerate(asarray(cc) - connectivity) 
+                              if not visit_mask[tuple(e)]]
         for i,e in enumerate(neighbors):
             d = tentative_distance[i] + m[cc]
             if d < m[e]:
@@ -74,7 +71,6 @@ def geodesic_distance_transform(m):
         m_mask = ma.masked_array(m, visit_mask)
         cc = unravel_index(m_mask.argmin(), m.shape)
     return m
-
 {% endhighlight %}
 
 {% highlight python %}
