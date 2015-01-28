@@ -88,3 +88,4 @@ colorbar()
 ![png](/assets/geodesic_distance_transform_files/geodesic_distance_transform_6_1.png)
 
 If someone have a faster implementation in python, I'm interested in!
+You can contribute to the code by giving an answer on [stackoverflow](http://stackoverflow.com/questions/28187867/geodesic-distance-transform-in-python).
