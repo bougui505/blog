@@ -28,3 +28,11 @@ awk '$0 ~ /ATOM      1/ {i++} {print >> "pdbs/out_"i".pdb"} {fflush("pdbs/out_"i
 {% highlight bash %}
 awk '$0 ~ /ATOM 1/ {i++} {print >> "pdbs/smap_"int(i/100)".pdb"} {fflush("pdbs/smap_"int(i/100)".pdb")}' smap.pdb
 {% endhighlight %}
+
+- Add MODEL \# for multiple models pdb files
+
+{% highlight bash %}
+function mspdb () {
+    grep -v 'CRYST1' $1 | awk '{if ($2==1){c+=1;print "MODEL "c}{print $0}}' | sed 's/END/ENDMDL/' > /dev/shm/tmp.pdb && mv -f /dev/shm/tmp.pdb $1
+    }
+{% endhighlight %}
