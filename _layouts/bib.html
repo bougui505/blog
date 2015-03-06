@@ -1,3 +1,6 @@
 ---
 ---
-{{key}} {{reference}}
+{{reference}}
+{% if entry.doi %}
+[direct link](http://dx.doi.org/{{entry.doi}})
+{% endif %}
