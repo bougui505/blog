@@ -2,7 +2,6 @@
 ---
 {{reference}}
 {% if entry.doi %}
-<form action="http://dx.doi.org/{{entry.doi}}">
-    <input type="submit" value="Direct link">
-</form>
+<input type="button" value="Direct link"
+onclick="window.open('http://dx.doi.org/{{entry.doi}}')">
 {% endif %}
