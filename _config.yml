@@ -17,6 +17,7 @@ paginate_path: "blog/page:num"
 
 # Bibliography
 scholar:
+    bibliography_template: bib
     sort_by: year
     order: descending
 
