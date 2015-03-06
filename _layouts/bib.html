@@ -2,5 +2,7 @@
 ---
 {{reference}}
 {% if entry.doi %}
-<a href="http://dx.doi.org/{{entry.doi}}">direct link</a>
+<form action="http://dx.doi.org/{{entry.doi}}">
+    <input type="submit" value="Direct link">
+</form>
 {% endif %}
