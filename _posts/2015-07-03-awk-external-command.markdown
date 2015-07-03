@@ -2,7 +2,7 @@
 title: "Run external command with awk"
 layout: default
 category: awk
-date: 2015-06-22
+date: 2015-07-03
 tags:
 - awk
 ---
