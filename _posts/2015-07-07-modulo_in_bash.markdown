@@ -25,4 +25,4 @@ For example:
         sleep $t
     done
 
-allow to increment the sleep by `$i % 15 + 2` which can be convenient to wait for a long process in background and to avoid overloading of the machine.
+allows to increment the sleep by `$i % 15 + 2` which can be convenient to wait for a long process in background and to avoid overloading of the machine.
