@@ -2,7 +2,7 @@
 title: "Modulo in bash"
 layout: default
 category: linux
-date: 2015-07-03
+date: 2015-07-07
 tags:
 - linux
 - bash
