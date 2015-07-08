@@ -39,4 +39,4 @@ Example of usage to plot 1 column data file (`data.txt`) in zsh:
 
 You can use this command line interface of matplotlib (work in progress):
 
-{% gist 8fb357f63547a757ee87}
+{% gist 8fb357f63547a757ee87 %}
