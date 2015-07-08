@@ -34,3 +34,9 @@ From the [official website](http://ctioga2.sourceforge.net/index.html)
 Example of usage to plot 1 column data file (`data.txt`) in zsh:
 
     ctioga2 -X =(cat -n data.txt)
+
+## Using matplotlib
+
+You can use this command line interface of matplotlib (work in progress):
+
+{% gist 8fb357f63547a757ee87}
