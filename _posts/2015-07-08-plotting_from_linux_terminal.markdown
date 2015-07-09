@@ -5,6 +5,7 @@ category: linux
 date: 2015-07-08
 tags:
 - linux
+- matplotlib
 ---
 
 # Plotting from linux terminal
