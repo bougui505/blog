@@ -27,8 +27,12 @@ awk '$0 ~ /ATOM      1/ {i++} {print >> "pdbs/out_"i".pdb"} {fflush("pdbs/out_"i
 It's possible to use the csplit command too. In the example below, I've a pdb file containing 50000 models delimited by `MODEL X` and `ENDMDL`:
 
 {% highlight bash %}
-csplit -f /dev/shm/docking_ -n 5 docking_results.pdb '/ENDMDL/1' '{49999}'
+csplit -z -f /dev/shm/docking_ -n 5 docking_results.pdb '/ENDMDL/1' '{49999}'
 {% endhighlight %}
+
+`-n`: number of digits
+
+`-z`: remove empty output files
 
 - If you want 100 structures per output file
 
