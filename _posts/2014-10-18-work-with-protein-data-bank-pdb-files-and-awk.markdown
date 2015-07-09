@@ -6,6 +6,7 @@ date: 2014-10-18 21:39:47 CEST
 tags:
 - awk
 - pdb
+- csplit
 ---
 
 # Work with protein data bank (pdb) files and awk
@@ -21,6 +22,12 @@ awk '{if ($1=="ATOM") printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,$2,$3,$4
 
 {% highlight bash %}
 awk '$0 ~ /ATOM      1/ {i++} {print >> "pdbs/out_"i".pdb"} {fflush("pdbs/out_"i".pdb")}' filename.pdb
+{% endhighlight %}
+
+It's possible to use the csplit command too. In the example below, I've a pdb file containing 50000 models delimited by `MODEL X` and `ENDMDL`:
+
+{% highlight bash %}
+csplit -f /dev/shm/docking_ -n 5 docking_results.pdb '/ENDMDL/1' '{49999}'
 {% endhighlight %}
 
 - If you want 100 structures per output file
