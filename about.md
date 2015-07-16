@@ -10,6 +10,8 @@ permalink: /about/
 
 guillaume.bouvier{at}ens-cachan.org
 
+[Link to my full resume](https://github.com/bougui505/CV/blob/english/cv.rst)
+
 ## Research experience:
 
 ### From 2010: Post-doctoral position
