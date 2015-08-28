@@ -1,0 +1,29 @@
+---
+title: "Making a slideshow for a speech from Inkscape"
+layout: default
+category: linux
+date: 2015-08-28
+tags:
+- inkscape
+- svg
+---
+
+# Making a slideshow for a speech from Inkscape
+
+See the [github dedicated page](https://github.com/bougui505/svg_to_pdf).
+
+Convert multiple svg files to pdf files and concatenate the resulting pdf files to a single one.
+
+Take a toc file as argument.
+This file contains the names of the svg files in the order you want to produce the pdf file.
+
+Args:
+
+- $1: toc file
+- $2: output pdf file name
+
+Replace the occurence of #P by the page number and #T by the total number of pages.
+
+Dependencies: inkscape, pdftk or gs
+
+{% gist 3d0be24c9a12d75a11a5 %}
