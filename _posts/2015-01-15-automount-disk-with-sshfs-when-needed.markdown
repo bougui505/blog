@@ -25,7 +25,7 @@ And edit the file `/etc/auto.master` by adding this line:
 
     /mnt/sshfs /etc/auto.sshfs uid=1000,gid=1000,--timeout=30,--ghost
 
-Replace the uid and gid by your user-id and group-id respectively.
+Replace the uid and gid by your user-id and group-id respectively (obtained respectively with id -u username and id -g username).
 `--timeout=30` is to unmount the disk when you didn't use it for 30 seconds.
 
 Create the file `/etc/auto.sshfs` with this content:
