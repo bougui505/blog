@@ -34,6 +34,19 @@ csplit -z -f /dev/shm/docking_ -n 5 docking_results.pdb '/ENDMDL/1' '{49999}'
 
 `-z`: remove empty output files
 
+In the previous example the output files are named (in the `/dev/shm/` directory):
+
+    docking_00000
+    docking_00001
+    ...
+    docking_49999
+
+If you want to add a suffix (for example `.pdb`) you have to specify the format:
+
+{% highlight bash %}
+csplit -z -f /dev/shm/docking_ -b '%05d.pdb' docking_results.pdb '/ENDMDL/1' '{49999}'
+{% endhighlight %}
+
 - If you want 100 structures per output file
 
 {% highlight bash %}
