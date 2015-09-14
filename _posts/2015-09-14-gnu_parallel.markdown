@@ -10,7 +10,7 @@ tags:
 
 # GNU parallel
 
-(GNU parallel is a command-line driven utility for Linux or other Unix-like operating systems which allows the user to execute shell scripts in parallel. GNU parallel is free software, written by Ole Tange in Perl. It is available under the terms of GPLv3.)[https://en.wikipedia.org/wiki/GNU_parallel]
+[GNU parallel is a command-line driven utility for Linux or other Unix-like operating systems which allows the user to execute shell scripts in parallel. GNU parallel is free software, written by Ole Tange in Perl. It is available under the terms of GPLv3.](https://en.wikipedia.org/wiki/GNU_parallel)
 
 For example, to process listed files in parallel:
 
