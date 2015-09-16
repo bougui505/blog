@@ -60,3 +60,11 @@ function mspdb () {
     grep -v 'CRYST1' $1 | awk '{if ($2==1){c+=1;print "MODEL "c}{print $0}}' | sed 's/END/ENDMDL/' > /dev/shm/tmp.pdb && mv -f /dev/shm/tmp.pdb $1
     }
 {% endhighlight %}
+
+- Compute the geometric center from a `pdb` file
+
+{% highlight bash %}
+awk '{if ($1 == "ATOM") {sx+=$6;sy+=$7;sz+=$8;n+=1}} END {print sx/n,sy/n,sz/n}' model1.pdb
+{% endhighlight %}
+
+Just adapt the column numbers for `x`, `y` and `z` depending of the presence of a chain id.
