@@ -14,7 +14,7 @@ To backup the SD card:
 
 - First read the SD card on a linux computer and identify it:
 
-    > sudo fdisk -l
+    $ sudo fdisk -l
     Disque /dev/sda : 232,9 GiB, 250059350016 octets, 488397168 secteurs
     Unités : secteur de 1 × 512 = 512 octets
     Taille de secteur (logique / physique) : 512 octets / 512 octets
