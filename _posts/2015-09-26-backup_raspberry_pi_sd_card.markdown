@@ -12,9 +12,9 @@ tags:
 
 To backup the SD card:
 
-First read the SD card on a linux computer and identify it:
+- First read the SD card on a linux computer and identify it:
 
-```
+{% highlight bash %}
 $ sudo fdisk -l
 Disque /dev/sda : 232,9 GiB, 250059350016 octets, 488397168 secteurs
 Unités : secteur de 1 × 512 = 512 octets
@@ -39,16 +39,16 @@ Identifiant de disque : 0x000b5098
 Device         Boot  Start      End  Sectors  Size Id Type
 /dev/mmcblk0p1        8192   122879   114688   56M  c W95 FAT32 (LBA)
 /dev/mmcblk0p2      122880 31116287 30993408 14,8G 83 Linux
-```
+{% endhighlight %}
 
 - Backup and compress the image:
 
-```
+{% highlight bash %}
 sudo dd if=/dev/mmcblk0 | gzip -9 > ./raspberrypi_20150926.img.gz
-```
+{% endhighlight %}
 
 - To restore the image:
 
-```
+{% highlight bash %}
 gunzip ./raspberrypi_20150926.img.gz | sudo dd of=/dev/mmcblk0
-```
+{% endhighlight %}
