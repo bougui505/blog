@@ -10,6 +10,8 @@ tags:
 
 # Making a slideshow for a speech from Inkscape
 
+Update: a very nice tool to make svg presentations from inkscape: [sozi](http://sozi.baierouge.fr/)
+
 See the [github dedicated page](https://github.com/bougui505/svg_to_pdf).
 
 Convert multiple svg files to pdf files and concatenate the resulting pdf files to a single one.

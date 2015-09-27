@@ -12,7 +12,7 @@ tags:
 
 To backup the SD card:
 
-- First read the SD card on a linux computer and identify it:
+First read the SD card on a linux computer and identify it:
 
 ```
 $ sudo fdisk -l
