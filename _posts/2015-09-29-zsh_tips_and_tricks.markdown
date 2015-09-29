@@ -6,26 +6,6 @@ tags:
 - zsh
 - linux
 ---
-{% comment %}
-Syntax HELP for markdown
-
-Code snippet highlighting:
-{% highlight python %}
-PYTHON CODE
-{% endhighlight %}
-
-Post URL:
-If you would like to include a link to a post on your site, the post_url tag
-will generate the correct permalink URL for the post you specify.
-{% post_url 2010-07-21-name-of-post %}
-
-Gist:
-{%gist 5a04655ce65766f143e0 %}
-
-Including images and resources:
-![My helpful screenshot]({{ site.url }}/assets/screenshot.jpg)
-
-{% endcomment %}
 
 # zsh tips and tricks
 
