@@ -5,6 +5,7 @@ date: 2015-10-02
 tags:
 - vmd
 - zsh
+- pdb
 ---
 
 # Script to automatically build psf file from pdb in VMD
