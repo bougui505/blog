@@ -6,6 +6,7 @@ tags:
 - vmd
 - zsh
 - pdb
+- parallel
 ---
 
 # Script to automatically build psf file from pdb in VMD
@@ -30,3 +31,9 @@ done
 {% endhighlight %}
 
 Where: `models/out_??.pdb` are your input pdb files.
+
+You can even run it in [parallel]({% post_url 2015-09-14-gnu_parallel %}) with GNU parallel:
+
+{% highlight bash %}
+ls out_?????.pdb | parallel --eta vmd -dispdev text -e =(sed "s,PDB,{}," ../autopsf.tcl) > /dev/null
+{% endhighlight %}
