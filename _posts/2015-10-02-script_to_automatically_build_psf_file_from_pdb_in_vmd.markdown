@@ -32,7 +32,7 @@ done
 
 Where: `models/out_??.pdb` are your input pdb files.
 
-You can even run it in [parallel]({% post_url 2015-09-14-gnu_parallel %}) with GNU parallel:
+You can even run it in [parallel]({% post_url 2015-09-14-gnu_parallel %}) with GNU parallel (to use with care as I'm note quite certain that the creation of the zsh temporary file is adapted to parallel processing...):
 
 {% highlight bash %}
 ls out_??.pdb | parallel --eta vmd -dispdev text -e =(sed "s,PDB,{}," autopsf.tcl) > /dev/null
