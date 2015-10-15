@@ -11,14 +11,14 @@ tags:
 
 # Work with protein data bank (pdb) files and awk
 
-- Format a pdb with awk for fields: [ATOM] [Atom  serial number] [Atom name] [Residue name] [Chain identifier] [Residue sequence number] [x] [y] [z]
+## Format a pdb with awk for fields: [ATOM] [Atom  serial number] [Atom name] [Residue name] [Chain identifier] [Residue sequence number] [x] [y] [z]
 
 {% highlight bash %}
 awk '{if ($1=="ATOM") printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,$2,$3,$4,$5,$6,$7,$8,$9); else print $0}' filename.pdb
 {% endhighlight %}
 
 
-- Split a pdb:
+## Split a pdb:
 
 {% highlight bash %}
 awk '$0 ~ /ATOM      1/ {i++} {print >> "pdbs/out_"i".pdb"} {fflush("pdbs/out_"i".pdb")}' filename.pdb
@@ -53,7 +53,7 @@ csplit -z -f /dev/shm/docking_ -b '%05d.pdb' docking_results.pdb '/ENDMDL/1' '{4
 awk '$0 ~ /ATOM 1/ {i++} {print >> "pdbs/smap_"int(i/100)".pdb"} {fflush("pdbs/smap_"int(i/100)".pdb")}' smap.pdb
 {% endhighlight %}
 
-- Add MODEL \# for multiple models pdb files
+## Add MODEL \# for multiple models pdb files
 
 {% highlight bash %}
 function mspdb () {
@@ -61,10 +61,16 @@ function mspdb () {
     }
 {% endhighlight %}
 
-- Compute the geometric center from a `pdb` file
+## Compute the geometric center from a `pdb` file
 
 {% highlight bash %}
 awk '{if ($1 == "ATOM") {sx+=$6;sy+=$7;sz+=$8;n+=1}} END {print sx/n,sy/n,sz/n}' model1.pdb
 {% endhighlight %}
 
 Just adapt the column numbers for `x`, `y` and `z` depending of the presence of a chain id.
+
+## Strip hydrogens from a `pdb` file
+
+{% highlight bash %}
+awk '{if ($1=="ATOM" && $3 !~ /H/) {c+=1; printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,c,$3,$4,$5,$6,$7,$8,$9)}}' filename.pdb
+{% endhighlight %}
