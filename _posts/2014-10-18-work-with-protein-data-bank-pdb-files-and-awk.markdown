@@ -72,5 +72,8 @@ Just adapt the column numbers for `x`, `y` and `z` depending of the presence of 
 ## Strip hydrogens from a `pdb` file
 
 {% highlight bash %}
-awk '{if ($1=="ATOM" && $3 !~ /H/) {c+=1; printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,c,$3,$4,$5,$6,$7,$8,$9)}}' filename.pdb
+function stripH () {
+    awk '{if ($1=="ATOM" && $3 !~ /H/) {c+=1; printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,c,$3,$4,$5,$6,$7,$8,$9)} \
+    else if ($1=="MODEL" || $1=="ENDMDL") {c=0; print $0}}' $1 > /dev/shm/tmp.pdb && mv /dev/shm/tmp.pdb $1
+}
 {% endhighlight %}
