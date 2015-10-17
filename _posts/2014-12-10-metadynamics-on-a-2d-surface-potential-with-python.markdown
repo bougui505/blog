@@ -338,7 +338,7 @@ animation.ArtistAnimation(fig, ims, interval=50, blit=True,
 
 {% endhighlight %}
 
-See this [youtube page](https://goo.gl/ZwfBhc) for a working example.
+{% youtube 5RlwgiZMjtM %}
 
 Below, just some snapshots of the metadynamics and standard sampling for
 comparison:
