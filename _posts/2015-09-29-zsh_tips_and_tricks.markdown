@@ -58,3 +58,14 @@ for x in ${@:2}; do
     echo $x
 done
 {% endhighlight %}
+
+## Increment value:
+
+{% highlight bash %}
+$ i=0
+$ echo $i
+0
+$ (( i+=1 ))
+$ echo $i
+1
+{% endhighlight %}
