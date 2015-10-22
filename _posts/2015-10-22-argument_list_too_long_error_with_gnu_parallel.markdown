@@ -6,7 +6,7 @@ tags:
 - parallel
 ---
 
-# `Argument list too long` error with GNU parallel
+# Argument list too long error with GNU parallel
 
 When the number of arguments is too long, GNU parallel raises a `Argument list too long` error.
 
