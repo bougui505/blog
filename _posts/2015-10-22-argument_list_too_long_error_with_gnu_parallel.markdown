@@ -15,17 +15,17 @@ A possible solution is to use the `find` command:
 {% highlight bash %}
     find directory -name "*.dat" |\
     parallel -k --eta "grep Chi {} | awk -F'Chi = ' '{print $2}'" > out.txt
-{% end highlight %}
+{% endhighlight %}
 
 instead of the classical syntax:
 
 {% highlight bash %}
     ls directory/*.dat |\
     parallel -k --eta "grep Chi {} | awk -F'Chi = ' '{print $2}'" > out.txt
-{% end highlight %}
+{% endhighlight %}
 
 or
 
 {% highlight bash %}
     parallel -k --eta "grep Chi {} | awk -F'Chi = ' '{print $2}'" ::: directory/*.dat > out.txt
-{% end highlight %}
+{% endhighlight %}
