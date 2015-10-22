@@ -26,4 +26,12 @@ I use two functions detailed in other blog posts:
 - [`splitpdb`]({% post_url 2015-10-21-split_a_multi_model_pdb_from_shell %})
 - [`mspdb`]({% post_url 2014-10-18-work-with-protein-data-bank-pdb-files-and-awk %})
 
+Two scripts are required:
+
+- The main shell script:
+
 {% gist 2fa82c1d039155503416 %}
+
+- The IMP python script:
+
+{% gist 7d32ce504bfbff965ee4 %}
