@@ -18,4 +18,7 @@ The selection string is optional and can be any valid selection string for
 selectAtoms() that produces identical selections in mobile and reference. e.g.
 `"resid 6-91"`
 
+I don't know why but the number of native contacts for the last frame is not
+computed, for the version of MDAnalyis I use (0.7.3).
+
 {% gist cc8415df4102becceede %}
