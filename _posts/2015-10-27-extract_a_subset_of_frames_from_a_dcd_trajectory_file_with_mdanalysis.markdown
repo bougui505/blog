@@ -22,4 +22,8 @@ instead. This feature is conveninant to pipe from awk, for example:
 
     awk '{print $3}' some_text_file.txt | ./extract_frames_from_dcd.py file.pdb file.dcd outfile.dcd
 
+To extract all frames from a trajectory just give:
+
+    ./extract_frames_from_dcd.py file.pdb file.dcd outfile.dcd all
+
 {% gist 12537c00c8e1679577de %}
