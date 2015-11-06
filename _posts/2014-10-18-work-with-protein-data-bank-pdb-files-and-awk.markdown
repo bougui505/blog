@@ -36,9 +36,14 @@ Just adapt the column numbers for `x`, `y` and `z` depending of the presence of 
 
 ## Strip hydrogens from a `pdb` file
 
+The `mktemp -p /dev/shm` function ensure that a unique temporary file name is
+created. This feature is important to run this function in parallel on multiple
+files.
+
 {% highlight bash %}
 function stripH () {
+    tmpfile=$(mktemp -p /dev/shm)
     awk '{if ($1=="ATOM" && $3 !~ /H/) {c+=1; printf("%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n", $1,c,$3,$4,$5,$6,$7,$8,$9)} \
-    else if ($1=="MODEL" || $1=="ENDMDL") {c=0; print $0}}' $1 > /dev/shm/tmp.pdb && mv /dev/shm/tmp.pdb $1
+    else if ($1=="MODEL" || $1=="ENDMDL") {c=0; print $0}}' $1 > $tmpfile && mv $tmpfile $1:h/rec_noH.pdb
 }
 {% endhighlight %}
