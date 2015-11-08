@@ -23,7 +23,7 @@ Unmount the partition to format; here:
 
     sudo parted /dev/sdb
 
-- display the partition table:
+### display the partition table:
 
     (parted) print
     Model: WD Elements 10B8 (scsi)
@@ -35,17 +35,17 @@ Unmount the partition to format; here:
     Number  Start   End     Size    Type     File system  Flags
      1      1049kB  1000GB  1000GB  primary  ntfs
 
-- delete partition 1:
+### delete partition 1:
 
     (parted) rm 1
 
-- Create a new partition table
+### Create a new partition table
 
     (parted) mklabel msdos
     Warning: The existing disk label on /dev/sdb will be destroyed and all data on this disk will be lost. Do you want to continue?
     Yes/No? Yes
 
-- make a partition
+### make a partition
 
     (parted) mkpart
     Partition type?  primary/extended? primary
@@ -66,7 +66,7 @@ Remark: `-1s`: last sector of the drive
      1      1049kB  1000GB  1000GB  primary  ext4         lba
 
 
-- exit parted
+### exit parted
 
     (parted) quit
     Information: You may need to update /etc/fstab.
