@@ -1,12 +1,12 @@
 ---
-title: "Very basic progress reporting in python"
+title: "Progress reporting in python"
 layout: default
 date: 2015-11-09
 tags:
 - python
 ---
 
-# Very basic progress reporting in python
+# Progress reporting in python
 
 Can be useful in IPython notebook to monitor a progress without displaying huge
 number of lines with print command.
