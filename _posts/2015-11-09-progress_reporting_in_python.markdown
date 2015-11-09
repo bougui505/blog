@@ -15,9 +15,9 @@ Usage:
 
 {% highlight python %}
 import time
-import basic_progress_reporting as bprogress
+import progress_reporting as Progress
 n = 1000
-progress = bprogress.Progress(n, delta=10)
+progress = Progress.Progress(n, delta=10)
 for i in range(n):
     time.sleep(0.01)
     progress.count()
