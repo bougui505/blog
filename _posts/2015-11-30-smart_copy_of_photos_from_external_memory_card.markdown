@@ -14,6 +14,11 @@ tags:
 This script makes a directory hierarchy by date (`YYYY/MM/DD`) and do not
 transfer photos already transfered.
 
+## Dependencies:
+
+- [pv](http://www.ivarch.com/programs/pv.shtml) (to install it: `sudo apt-get install pv`) (see this [blog post]({% post_url 2015-10-29-get_a_progress_bar_for_a_process_in_shell_with_pv_--_pipe_viewer_-- %}))
+- zsh (but should be OK for other shells)
+
 ## Usage:
 
     ./get_photos.sh /path/to/the/mounted/memory/card
