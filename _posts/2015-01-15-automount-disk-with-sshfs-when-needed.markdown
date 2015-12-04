@@ -5,6 +5,8 @@ category: linux
 date: 2015-01-15 21:43:27 CET
 tags:
 - linux
+- sshfs
+- autofs
 ---
 
 # Automount disk with sshfs when needed, with autofs
