@@ -66,6 +66,21 @@ Remark: `-1s`: last sector of the drive
      1      1049kB  1000GB  1000GB  primary  ext4         lba
 
 
+#### In case of: `Warning: The resulting partition is not properly aligned for best performance.`
+
+Cancel the operation:
+
+    Warning: The resulting partition is not properly aligned for best performance.
+    Ignore/Cancel? C
+
+And try again with `100%` instead of `-1s`:
+
+    (parted) mkpart
+    Partition type?  primary/extended? primary
+    File system type?  [ext2]? ext4
+    Start? 0%
+    End? 100%
+
 ### exit parted
 
     (parted) quit
