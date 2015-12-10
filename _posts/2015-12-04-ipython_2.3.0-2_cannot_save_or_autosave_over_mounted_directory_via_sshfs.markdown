@@ -1,0 +1,24 @@
+---
+title: "iPython 2.3.0-2 cannot save or autosave over mounted directory via sshfs"
+layout: default
+date: 2015-12-04
+tags:
+- ipython
+- python
+- sshfs
+- autofs
+---
+
+# iPython 2.3.0-2 cannot save or autosave over mounted directory via sshfs
+
+A workaround for this bug is to add this options to the file `/etc/auto.sshfs`:
+
+    workaround=rename,noexec
+
+The full line of my `/etc/auto.sshfs` is:
+
+    home_pro -fstype=fuse,port=22,rw,allow_other,workaround=rename,noexec :sshfs\#username@hostname\:/path/to/the/directory/to/mount
+
+## Related post:
+
+- [Automount disk with sshfs when needed, with autofs]({% post_url 2015-01-15-automount-disk-with-sshfs-when-needed %})
