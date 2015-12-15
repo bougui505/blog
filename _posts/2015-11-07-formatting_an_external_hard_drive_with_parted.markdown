@@ -106,3 +106,6 @@ If you get a `permission denied` just try to:
 
     cd ..
     sudo chown yourusername:yourgroupname 4fc9b323-ac89-444a-9483-9af84030e1a1
+
+![XKCD](/assets/old_files.png)
+[http://xkcd.com/1360/](http://xkcd.com/1360/)
