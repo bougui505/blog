@@ -30,3 +30,6 @@ a ProxyCommand in `.ssh/config` file:
 Now you can connect directly to `host1` with the following command:
 
     ssh host1
+
+![XKCD comics](/assets/im_an_idiot.png)
+[https://xkcd.com/530/](https://xkcd.com/530/)
