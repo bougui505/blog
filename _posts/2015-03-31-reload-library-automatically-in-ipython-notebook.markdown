@@ -20,4 +20,4 @@ Working example:
     %autoreload 2
 
 ![XKCD](/assets/python.png)
-[http://xkcd.com/353/]{http://xkcd.com/353/}
+[http://xkcd.com/353/](http://xkcd.com/353/)
