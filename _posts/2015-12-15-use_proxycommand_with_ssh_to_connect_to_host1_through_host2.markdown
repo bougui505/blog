@@ -26,3 +26,7 @@ a ProxyCommand in `.ssh/config` file:
     Host host1
         User username1
         ProxyCommand ssh username2@host2 exec nc host1 22
+
+Now you can connect directly to `host1` with the following command:
+
+    ssh host1
