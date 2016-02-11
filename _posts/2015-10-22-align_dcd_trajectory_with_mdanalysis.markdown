@@ -18,4 +18,6 @@ The selection string is optional and can be any valid selection string for
 selectAtoms() that produces identical selections in mobile and reference. e.g.
 `"resid 6-91"`
 
+Remark: You can give a pdb file instead of the psf file.
+
 {% gist b5fbdb2de5b9c1ff106e %}
