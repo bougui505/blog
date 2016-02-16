@@ -52,13 +52,13 @@ tags:
 
 ## Resize a given LV
 
-- Resize `/dev/mantrisse-vg/home` by adding 50 Go:
+### Resize `/dev/mantrisse-vg/home` by adding 50 Go:
 
     bougui@mantrisse ~> sudo lvresize -L+50g /dev/mantrisse-vg/home
       Size of logical volume mantrisse-vg/home changed from 100,00 GiB (25600 extents) to 150,00 GiB (38400 extents).
       Logical volume home successfully resized
 
-- and then resize the file system to cover the full space available:
+### and then resize the file system to cover the full space available:
 
     bougui@mantrisse ~> sudo resize2fs /dev/mantrisse-vg/home
     resize2fs 1.42.12 (29-Aug-2014)
