@@ -12,7 +12,7 @@ tags:
 
 Usage:
 
-    ./modeller_ca_to_all_atoms.py input_structure_ca.pdb
+    ./modeller_ca_to_all_atoms.py input_structure_ca.pdb [bb]
 
 It returns modeller_out.pdb, an all atoms structure.
 
@@ -20,5 +20,8 @@ The script extracts distances between C alpha atoms and read the beta factor
 column of the pdb to get the standard deviation from the target distance and
 applies a Gaussian distance restraint along with the stereochemical restraints
 (BOND, ANGLE, DIHEDRAL, IMPROPER).
+
+The script can also handle backbone only protein structure and return a full
+atom protein. Just add the `bb` keyword argument.
 
 {% gist 07281e1e0156193c5ef047b1e0113106 %}
