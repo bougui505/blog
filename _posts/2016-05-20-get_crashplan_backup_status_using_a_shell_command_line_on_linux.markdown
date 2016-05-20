@@ -9,7 +9,7 @@ tags:
 
 # Get CrashPlan backup status using a shell command line on Linux
 
-I use [Crashplan](coastal_models/model_0106.pdb) to backup my file on Linux.
+I use [Crashplan](http://www.code42.com/crashplan/) to backup my file on Linux.
 The backup system works well, however there is no shell commands to obtain
 informations about files status -- are they backuped or not and when the last
 backup has been done?
