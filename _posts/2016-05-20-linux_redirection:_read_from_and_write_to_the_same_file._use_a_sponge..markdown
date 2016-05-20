@@ -9,6 +9,10 @@ tags:
 
 # Linux redirection: read from and write to the same file. Use a sponge!
 
+Installation on Debian/Ubuntu:
+
+    sudo apt-get install moreutils
+
 From the man page:
 
 sponge  reads standard input and writes it out to the specified file. Unlike a
