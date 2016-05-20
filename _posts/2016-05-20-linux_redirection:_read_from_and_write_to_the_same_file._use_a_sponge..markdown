@@ -22,6 +22,7 @@ output file is a special file or symlink, the data will be written to it.
 If no output file is specified, sponge outputs to stdout.
 
 For example:
+
     sed '...' file | grep '...' | sponge file
 
 That's it!
