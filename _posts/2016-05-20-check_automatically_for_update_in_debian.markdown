@@ -26,7 +26,7 @@ off at that time.
 You can use `anacron` instead of cron to execute `cron-apt` regularly. For
 doing this, just link the executable in the `/etc/cron.daily/` directory:
 
-    sudo ln -s /usr/sbin/cron-apt /etc/cron.d/
+    sudo ln -s /usr/sbin/cron-apt /etc/cron.daily/
 
 However `anacron` is automatically launched each day at 7:30 am by `cron`. The
 command that launch `anacron` by `cron` is found in this file:
