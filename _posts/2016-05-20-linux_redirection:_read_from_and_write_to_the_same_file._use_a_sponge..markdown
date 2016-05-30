@@ -30,3 +30,14 @@ For example:
     sed '...' file | grep '...' | sponge file
 
 That's it!
+
+Remark: The moreutils package is in conflict with GNU parallel (parallel
+package) because the moreutils package comes with its own `parallel` command.
+However, the `parallel` command provided by the moreutils package is much less
+powerful than the GNU parallel. If you want to keep the GNU `parallel` command
+and use the `sponge` command to, you can install `sponge` locally in
+`$HOME/bin` for example. To do so:
+
+    git clone git://git.joeyh.name/moreutils
+    cd moreutils
+    gcc sponge.c -o ~/bin/sponge
