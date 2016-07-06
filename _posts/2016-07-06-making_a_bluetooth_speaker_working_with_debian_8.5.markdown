@@ -13,7 +13,7 @@ This solution works for me with the Bose SoundLink Mini.
 
 ## Install the required packages:
 
-    sudo apt-get install pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmware
+    sudo apt-get install pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmware pulseaudio-module-gconf
 
 ## Edit and check /etc/pulse/default.pa
 
