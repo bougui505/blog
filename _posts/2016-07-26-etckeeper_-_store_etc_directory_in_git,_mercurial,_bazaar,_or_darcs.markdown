@@ -5,6 +5,7 @@ date: 2016-07-26
 tags:
 - git
 - linux
+- etckeeper
 ---
 
 # etckeeper - store etc directory in git, mercurial, bazaar, or darcs
