@@ -11,6 +11,10 @@ tags:
 
 A very useful tool to backup locally `/etc`.
 
+To install it on Debian:
+
+    sudo apt-get install etckeeper
+
 Below the man page:
 
     ETCKEEPER(8)                                                      ETCKEEPER(8)
