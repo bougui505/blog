@@ -9,9 +9,9 @@ tags:
 
 # Modeller: generate an extended protein conformation from an initial PDB file
 
-The script below take a pdb file as argument and read its sequence and topology
-to generate an extended conformation of the protein. The output file is a pdb
-file named `modeller_out.pdb`.
+The script below takes a pdb file as argument and reads its sequence and
+topology to generate an extended conformation of the protein. The output file
+is a pdb file named `modeller_out.pdb`.
 
 Usage:
 
