@@ -15,10 +15,11 @@ Below is the python line to extract fields from a `pdb` file:
 {% highlight python %}
 with open('min.pdb') as pdbfile:
     for line in pdbfile:
-        print line
-        splitted_line = [line[:6], line[6:11], line[12:16], line[17:20], line[21], line[22:26], line[30:38], line[38:46], line[46:54]]
-        print splitted_line
-        print "%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n"%tuple(splitted_line)
+        if line[:4] == 'ATOM' or line[:6] == "HETATM":
+            print line
+            splitted_line = [line[:6], line[6:11], line[12:16], line[17:20], line[21], line[22:26], line[30:38], line[38:46], line[46:54]]
+            print splitted_line
+            print "%-6s%5s %4s %3s %s%4s    %8s%8s%8s\n"%tuple(splitted_line)
 {% endhighlight %}
 
 Sample output:
