@@ -72,7 +72,7 @@ tmp = colorbar()
 
 I wrote the following code to define the shortest path between two points on
 that grid. The metric I used between two adjacent points of the meshgrid is
-given by `(V[e]-V[cc])**2` with cc the current cell and e one of the neighboring
+given by `V[e]-V[cc]` with cc the current cell and e one of the neighboring
 cells. The neighbors are defined with a full connectivity: all direct neighbors
 with diagonal included.
 
@@ -91,7 +91,7 @@ def dijkstra(V):
         neighbors = [tuple(e) for e in asarray(cc) - connectivity 
                      if e[0] > 0 and e[1] > 0 and e[0] < V.shape[0] and e[1] < V.shape[1]]
         neighbors = [ e for e in neighbors if not visit_mask[e] ]
-        tentative_distance = [(V[e]-V[cc])**2 for e in neighbors]
+        tentative_distance = asarray([V[e]-V[cc] for e in neighbors])
         for i,e in enumerate(neighbors):
             d = tentative_distance[i] + m[cc]
             if d < m[e]:
@@ -101,7 +101,6 @@ def dijkstra(V):
         m_mask = ma.masked_array(m, visit_mask)
         cc = unravel_index(m_mask.argmin(), m.shape)
     return m, P
-
 {% endhighlight %}
 
 
@@ -134,18 +133,11 @@ plot(path[:,1], path[:,0], 'r.-')
 
 ![png](/assets/shortest_path_files/shortest_path_7_1.png)
 
-I've slightly modified the `dijkstra` algorithm to change the metric between
-nodes: `(V[e]-V[cc])` instead of `(V[e]-V[cc])**2`.
-
-With that distance, negative distances exists.
-
 Then, I added a metropolis criteria to accept the next step with a given
-probability: `m[e]/d > numpy.random.random()`, but we should take care of the
-negative distances, thats why I've changed the distance for that function to:
-`[max((V[e]-V[cc]), 0)`
+probability: `exp(beta*(m[e]-d)) > numpy.random.random()`.
 
 {% highlight python %}
-def dijkstra_metropolis(V):
+def dijkstra_metropolis(V, beta=1):
     mask = V.mask
     visit_mask = mask.copy() # mask visited cells
     m = numpy.ones_like(V) * numpy.inf
@@ -159,31 +151,41 @@ def dijkstra_metropolis(V):
         neighbors = [tuple(e) for e in asarray(cc) - connectivity 
                      if e[0] > 0 and e[1] > 0 and e[0] < V.shape[0] and e[1] < V.shape[1]]
         neighbors = [ e for e in neighbors if not visit_mask[e] ]
-        tentative_distance = [max((V[e]-V[cc]), 0) for e in neighbors]
-        for i,e in enumerate(neighbors):
+        tentative_distance = [(V[e]-V[cc]) for e in neighbors]
+        if len(neighbors) > 0:
+            rand_neighbors = numpy.random.choice(len(neighbors), size=len(neighbors), replace=True)
+        else:
+            rand_neighbors = []
+        for i in rand_neighbors:
+            e = neighbors[i]
             d = tentative_distance[i] + m[cc]
-            if m[e]/d > numpy.random.random():
+            if d < m[e]:
                 m[e] = d
                 P[e] = cc
+            elif exp(beta*(m[e]-d)) > numpy.random.random():
+                m[e] = d
+                P[e] = cc
+                break
         visit_mask[cc] = True
         m_mask = ma.masked_array(m, visit_mask)
         cc = unravel_index(m_mask.argmin(), m.shape)
     return m, P
 {% endhighlight %}
 
+`beta` ($$\beta = 1/T$$) is the temperature factor. When `beta = numpy.inf` we
+obtain the same result as the `dijkstra` function.
+
 Below is the result for the Dijkstra algorithm (in white) and the Metropolis
 Dijkstra (in red):
 
 {% highlight python %}
-print V.shape
-D_mc, P_mc = dijkstra_metropolis(V)
+D_mc, P_mc = dijkstra_metropolis(V, beta=0.)
 path_mc = shortestPath(unravel_index(V.argmin(), V.shape), (40,4), P_mc)
 D, P = dijkstra(V)
 path = shortestPath(unravel_index(V.argmin(), V.shape), (40,4), P)
 contourf(V, 40)
 plot(path[:,1], path[:,0], 'w.-')
 plot(path_mc[:,1], path_mc[:,0], 'r.-')
-print path_mc.shape[0], path.shape[0]
 {% endhighlight %}
 
 ![png](/assets/shortest_path_files/shortest_path_metropolis.png)
