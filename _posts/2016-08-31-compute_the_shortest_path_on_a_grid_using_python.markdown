@@ -134,3 +134,52 @@ plot(path[:,1], path[:,0], 'r.-')
 
 ![png](/assets/shortest_path_files/shortest_path_7_1.png)
 
+I've slightly modified the `dijkstra` algorithm to change the metric between
+nodes: `max((V[e]-V[cc]), 0)` instead of `(V[e]-V[cc])**2`.
+
+Then, I added a metropolis criteria to accept the next step with a given
+probability: `m[e]/d > numpy.random.random()`:
+
+{% highlight python %}
+def dijkstra_metropolis(V):
+    mask = V.mask
+    visit_mask = mask.copy() # mask visited cells
+    m = numpy.ones_like(V) * numpy.inf
+    connectivity = [(i,j) for i in [-1, 0, 1] for j in [-1, 0, 1] if (not (i == j == 0))]
+    cc = unravel_index(V.argmin(), m.shape) # current_cell
+    m[cc] = 0
+    P = {}  # dictionary of predecessors 
+    #while (~visit_mask).sum() > 0:
+    for _ in range(V.size):
+        #print cc
+        neighbors = [tuple(e) for e in asarray(cc) - connectivity 
+                     if e[0] > 0 and e[1] > 0 and e[0] < V.shape[0] and e[1] < V.shape[1]]
+        neighbors = [ e for e in neighbors if not visit_mask[e] ]
+        tentative_distance = [max((V[e]-V[cc]), 0) for e in neighbors]
+        for i,e in enumerate(neighbors):
+            d = tentative_distance[i] + m[cc]
+            if m[e]/d > numpy.random.random():
+                m[e] = d
+                P[e] = cc
+        visit_mask[cc] = True
+        m_mask = ma.masked_array(m, visit_mask)
+        cc = unravel_index(m_mask.argmin(), m.shape)
+    return m, P
+{% endhighlight %}
+
+Below is the result for the Dijkstra algorithm (in white) and the Metropolis
+Dijkstra (in red):
+
+{% highlight python %}
+print V.shape
+D_mc, P_mc = dijkstra_metropolis(V)
+path_mc = shortestPath(unravel_index(V.argmin(), V.shape), (40,4), P_mc)
+D, P = dijkstra(V)
+path = shortestPath(unravel_index(V.argmin(), V.shape), (40,4), P)
+contourf(V, 40)
+plot(path[:,1], path[:,0], 'w.-')
+plot(path_mc[:,1], path_mc[:,0], 'r.-')
+print path_mc.shape[0], path.shape[0]
+{% endhighlight %}
+
+![png](/assets/shortest_path_files/shortest_path_metropolis.png)
