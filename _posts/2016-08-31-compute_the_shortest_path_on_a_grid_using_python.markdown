@@ -135,10 +135,14 @@ plot(path[:,1], path[:,0], 'r.-')
 ![png](/assets/shortest_path_files/shortest_path_7_1.png)
 
 I've slightly modified the `dijkstra` algorithm to change the metric between
-nodes: `max((V[e]-V[cc]), 0)` instead of `(V[e]-V[cc])**2`.
+nodes: `(V[e]-V[cc])` instead of `(V[e]-V[cc])**2`.
+
+With that distance, negative distances exists.
 
 Then, I added a metropolis criteria to accept the next step with a given
-probability: `m[e]/d > numpy.random.random()`:
+probability: `m[e]/d > numpy.random.random()`, but we should take care of the
+negative distances, thats why I've changed the distance for that function to:
+`[max((V[e]-V[cc]), 0)`
 
 {% highlight python %}
 def dijkstra_metropolis(V):
