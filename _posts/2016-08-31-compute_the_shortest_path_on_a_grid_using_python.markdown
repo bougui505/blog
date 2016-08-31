@@ -153,7 +153,7 @@ def dijkstra_metropolis(V, beta=1):
         neighbors = [ e for e in neighbors if not visit_mask[e] ]
         tentative_distance = [(V[e]-V[cc]) for e in neighbors]
         if len(neighbors) > 0:
-            rand_neighbors = numpy.random.choice(len(neighbors), size=len(neighbors), replace=True)
+            rand_neighbors = numpy.random.choice(len(neighbors), size=len(neighbors), replace=False)
         else:
             rand_neighbors = []
         for i in rand_neighbors:
