@@ -189,3 +189,61 @@ plot(path_mc[:,1], path_mc[:,0], 'r.-')
 {% endhighlight %}
 
 ![png](/assets/shortest_path_files/shortest_path_metropolis.png)
+
+As I want to obtain a reasonable path that sample basins in the potential, I
+wrote the functions below.
+
+The basic idea behind the `extend_path` function is to extend the shortest path
+obtained by taking neighbors of nodes in the path that minimize the potential.
+A set keeps record of the cells already visited during the extension process.
+
+{% highlight python %}
+def get_neighbors(cc, V, visited_nodes):
+    connectivity = [(i,j) for i in [-1, 0, 1] for j in [-1, 0, 1] if (not (i == j == 0))]
+    neighbors = [tuple(e) for e in asarray(cc) - connectivity 
+                 if e[0] > 0 and e[1] > 0 and e[0] < V.shape[0] and e[1] < V.shape[1]]
+    neighbors = [ e for e in neighbors if e not in visited_nodes ]
+    return neighbors
+
+def extend_path(V, path, n):
+    """
+    Extend the given path with n steps
+    """
+    path = [tuple(e) for e in path]
+    do_break = False
+    visited_nodes = set()
+    for _ in range(n):
+        visited_nodes.update(path)
+        dist_min = numpy.inf
+        for i_cc, cc in enumerate(path[:-1]):
+            neighbors = get_neighbors(cc, V, visited_nodes)
+            next_step = path[i_cc+1]
+            next_neighbors = get_neighbors(next_step, V, visited_nodes)
+            join_neighbors = list(set(neighbors) & set(next_neighbors))
+            if len(join_neighbors) > 0:
+                tentative_distance = [ V[e] for e in join_neighbors ]
+                argmin_dist = argmin(tentative_distance)
+                if tentative_distance[argmin_dist] < dist_min:
+                    dist_min, new_step, new_step_index  = tentative_distance[argmin_dist], join_neighbors[argmin_dist], i_cc+1
+        path.insert(new_step_index, new_step)
+    return path
+{% endhighlight %}
+
+Below is the result I obtained by extending the shortest path with 250 steps:
+
+{% highlight python %}
+path_ext = extend_path(V, path, 250)
+print len(path), len(path_ext)
+path_ext = numpy.asarray(path_ext)
+contourf(V, 40)
+plot(path[:,1], path[:,0], 'w.-')
+plot(path_ext[:,1], path_ext[:,0], 'r.-')
+colorbar()
+{% endhighlight %}
+
+![png](/assets/shortest_path_files/path_extended.png)
+
+As expected I start to sample the deeper basins first when I increase `n`, as
+seen below:
+
+![png](/assets/shortest_path_files/path_extended_evolving.png)
