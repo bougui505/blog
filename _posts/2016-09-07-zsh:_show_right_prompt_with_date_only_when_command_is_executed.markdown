@@ -26,7 +26,7 @@ tags:
         fi
     }
 
-NB: From the [zsh documentation om hook functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions):
+NB: From the [zsh documentation on hook functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions):
 
 `preexec`
 
