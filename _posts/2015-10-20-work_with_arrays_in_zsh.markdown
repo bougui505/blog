@@ -38,3 +38,10 @@ $ a+=2
 $ echo $a
 1 2
 {% endhighlight %}
+
+## Get the length of the array
+
+{% highlight bash %}
+$ echo ${#a[@]}
+3
+{% endhighlight %}
