@@ -9,6 +9,7 @@ tags:
 - awk
 - zsh
 - csplit
+- pdb
 ---
 
 # Split a multi model pdb from shell
