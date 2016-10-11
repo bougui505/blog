@@ -10,7 +10,6 @@ tags:
 
 
 {% highlight bash %}
-# show right prompt with date in red ONLY when command is executed
 preexec () {
     RED='\033[0;31m'
     NC='\033[0m' # No Color
@@ -30,7 +29,6 @@ preexec () {
         echo -e "${RED}${RDATE}${NC}"
     fi
 }
-# else show right prompt with current date in green
 RPROMPT='%{$fg[green]%}[%D{%H:%M:%S}]'
 {% endhighlight %}
 
