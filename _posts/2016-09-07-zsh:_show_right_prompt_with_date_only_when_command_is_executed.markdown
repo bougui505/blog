@@ -8,7 +8,11 @@ tags:
 
 # zsh: show right prompt with date ONLY when command is executed
 
+
+    # show right prompt with date in red ONLY when command is executed
     preexec () {
+        RED='\033[0;31m'
+        NC='\033[0m' # No Color
         DATE=$( date +"[%H:%M:%S]" )
         local len_right=$( strlen "$DATE" )
         len_right=$(( $len_right+1 ))
@@ -20,11 +24,13 @@ tags:
         if [ $len_left -lt $right_start ]; then
             # command does not overwrite right prompt
             # ok to move up one line
-            echo -e "\033[1A${RDATE}"
+            echo -e "${RED}\033[1A${RDATE}${NC}"
         else
-            echo -e "${RDATE}"
+            echo -e "${RED}${RDATE}${NC}"
         fi
     }
+    # else show right prompt with current date in green
+    RPROMPT='%{$fg[green]%}[%D{%H:%M:%S}]'
 
 NB: From the [zsh documentation on hook functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions):
 
