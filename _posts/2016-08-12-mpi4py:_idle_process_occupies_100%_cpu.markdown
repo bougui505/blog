@@ -17,6 +17,7 @@ workaround is to replace `COMM.barrier()` by this function:
 Example usage:
 
 {% highlight python %}
+from mpi4py import MPI
 import time
 comm = MPI.COMM_WORLD
 tic = MPI.Wtime()
