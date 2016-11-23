@@ -27,19 +27,19 @@ If there are multiple clients:
 
     /mnt/nfs_share IP_ADDRESS_1(rw,sync) IP_ADDRESS_2(rw,sync) ...
 
-Start the `rpcbind` service:
+### Start the rpcbind service:
 
     sudo service rpcbind start
 
-Start the nfs server service:
+### Start the nfs server service:
 
     sudo service nfs-kernel-server restart
 
-Export the shared file system:
+### Export the shared file system:
 
     sudo exportfs
 
-Check the export:
+### Check the export:
 
     sudo showmount
 
