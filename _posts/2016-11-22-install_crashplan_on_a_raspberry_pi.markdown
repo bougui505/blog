@@ -13,7 +13,7 @@ tags:
 
 Crashplan is quite difficult to install on the RPi and is not supported
 officially to be installed on ARM architectures. Thus, a possible workaround to
-backup your data on your RPi is to [setup an NFS server]({% post_url 2016-11-23-configure_nfs_server_and_client.markdown %}) and to backup on it.
+backup your data on your RPi is to setup an NFS server and to backup on it.
 However, the set up of an NFS mounted disk as backup destination for Crashplan
 is not possible. The workaround is to:
 
