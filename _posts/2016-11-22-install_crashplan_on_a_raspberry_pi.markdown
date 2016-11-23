@@ -9,6 +9,26 @@ tags:
 
 # Install Crashplan on a Raspberry Pi
 
+## Update:
+
+Crashplan is quite difficult to install on the RPi and is not supported
+officially to be installed on ARM architectures. Thus, a possible workaround to
+backup your data on your RPi is to [setup an NFS server]({% post_url 2016-11-23-configure_nfs_server_and_client.markdown %}) and to backup on it.
+However, the set up of an NFS mounted disk as backup destination for Crashplan
+is not possible. The workaround is to:
+
+- create an empty directory as the backup destination on the local disk
+
+- create the same directory on the nfs
+
+- setup the local directory as the backup destination on Crashplan
+
+- remove the local directory while the Crashplan app is still opened
+
+- soft link (`ln -s`) the nfs directory to the location of the previous local directory
+
+and voilà!
+
 ## Install the required packages
 
     sudo apt-get install oracle-java8-jdk
