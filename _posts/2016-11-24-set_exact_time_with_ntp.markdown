@@ -37,3 +37,7 @@ Edit the file `/etc/ntp.conf` and look at the server list and add eventually a s
 ## Eventually list the status of each server with:
 
     $ ntpq -p
+
+## Remark:
+
+You can eventually check the time of your computer on [Time.is](http://time.is/).
