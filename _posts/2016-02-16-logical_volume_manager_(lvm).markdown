@@ -71,3 +71,24 @@ tags:
 If the physical volume to resize is `/dev/sda5`, just do:
 
     bougui@mantrisse ~> sudo pvresize /dev/sda5
+
+## Shrink a given LV:
+
+It's a little more tricky to do. First, start from a rescue system (like
+clonezilla) on an usb stick or a CD.
+
+### Be sure that the filesystem you want to shrink is unmount (use the unmount command if required).
+
+### Check the filesystem (here: /dev/mantrisse-vg/home)
+
+    $ sudo e2fsck -f /dev/mantrisse-vg/home
+
+### Shrink the filesystem:
+
+E.g. to shrink the filesystem to 500G:
+
+    $ sudo resize2fs /dev/mantrisse-vg/home 500G
+
+### Reduce the logical volume:
+
+    $ sudo lvreduce -L 500G /dev/mantrisse-vg/home
