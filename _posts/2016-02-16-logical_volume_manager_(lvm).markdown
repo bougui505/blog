@@ -77,7 +77,7 @@ If the physical volume to resize is `/dev/sda5`, just do:
 It's a little more tricky to do. First, start from a rescue system (like
 clonezilla) on an usb stick or a CD.
 
-### Be sure that the filesystem you want to shrink is unmount (use the unmount command if required).
+### Be sure that the filesystem you want to shrink is unmount (use the umount command if required).
 
 ### Check the filesystem (here: /dev/mantrisse-vg/home)
 
@@ -92,3 +92,21 @@ E.g. to shrink the filesystem to 500G:
 ### Reduce the logical volume:
 
     $ sudo lvreduce -L 500G /dev/mantrisse-vg/home
+
+## Create a Logical volume
+
+### Logical Volume creation of size 500G with name backup in the Volume Group mantrisse-vg
+
+    bougui@mantrisse ~> sudo lvcreate -L 500G -n backup mantrisse-vg
+
+### Create the ext4 filesystem
+
+    bougui@mantrisse ~> sudo mkfs -t ext4 /dev/mantrisse-vg/backup
+
+### Edit the fstab to mount the LV:
+
+    /dev/mapper/mantrisse--vg-backup /backup           ext4    defaults        0       2
+
+### Mount the LV:
+
+    bougui@mantrisse ~> sudo mount /backup
