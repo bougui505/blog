@@ -65,3 +65,9 @@ tags:
     Le système de fichiers de /dev/mantrisse-vg/home est monté sur /home ; le changement de taille doit être effectué en ligne
     old_desc_blocks = 7, new_desc_blocks = 10
     Le système de fichiers sur /dev/mantrisse-vg/home a maintenant une taille de 39321600 blocs (4k).
+
+## Use pvresize to grow the LVM PV to match the size of the partition
+
+If the physical volume to resize is `/dev/sda5`, just do:
+
+    bougui@mantrisse ~> sudo pvresize /dev/sda5
