@@ -10,4 +10,4 @@ tags:
 
 Save each frame as a `png` in `movie` directory with pattern `movie_*`. Turn the molecule along the x-axis from 0 to 360 degrees:
 
-    movie record format png directory movie pattern movie_*; turn y 1 360; wait; movie stop; movie reset
+    movie record format png directory movie pattern movie_*; turn y 1 360; wait; movie stop
