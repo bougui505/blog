@@ -6,13 +6,15 @@ permalink: /about/
 
 ### Guillaume Bouvier
 
-![photo_id](/assets/photo_id_128.jpg)
+![photo_id](/assets/profile.jpg)
 
-guillaume.bouvier{at}ens-cachan.org
-
-[Link to my full resume](https://github.com/bougui505/CV/blob/english/cv.rst)
+guillaume.bouvier{at}pasteur.fr
 
 ## Research experience:
+
+### From September 2015: Permanent position
+
+- Institut Pasteur, [Structural Bioinformatics Unit](http://www.pasteur.fr/recherche/unites/Binfs) - Paris, France.
 
 ### From 2010: Post-doctoral position
 
@@ -20,14 +22,14 @@ guillaume.bouvier{at}ens-cachan.org
     - Protein dynamic, ligand docking and virtual screening.
     - Machine learning and non-linear dimensionality reduction of protein conformational space.
 
-### 2007-2010: PhD student
+### 2007-2010: PhD
 
 - Laboratoire de Chimie et de Biochimie Pharmacologiques et Toxicologiques (UMR8601 CNRS).
     - [Thèse de doctorat: Étude d'inhibiteurs de l'intégrase du VIH-1 par RMN et modélisation moléculaire. Développement et validation d'un outil de criblage virtuel](/assets/These_Guillaume_Bouvier.pdf)
     - Nuclear Magnetic resonance (NMR) of protein ligand interactions.
     - Virtual screening and molecular modeling.
 
-### [Bibliography](http://izar.crabdance.com/bibliography.html)
+### [Bibliography](https://goo.gl/hhx2o1)
 
 ## Education:
 
