@@ -14,4 +14,9 @@ Usage:
 
     topoalign.py ref.pdb sample.pdb
 
+Sample output for a trimer:
+
+![png](/assets/topoalign.svg)
+
 {% gist a34dbe51199a5c2c52817ae9d3988d41 %}
+
