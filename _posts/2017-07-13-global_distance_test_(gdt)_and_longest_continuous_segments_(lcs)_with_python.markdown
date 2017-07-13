@@ -12,7 +12,7 @@ tags:
 
 Usage:
 
-    ./gdt.py protein1.pdb ref1.pdb protein2.pdb ref2.pdb
+    ./gdt.py model_A_1.pdb ref1.pdb model_B_1.pdb ref2.pdb model_C_0.pdb ref3.pdb
 
 Results:
 
