@@ -5,6 +5,7 @@ date: 2017-06-23
 tags:
 - python
 - ggplot
+- virtualenv
 ---
 
 # Install ggplot for python in a virtualenv and use it with ipython notebook
