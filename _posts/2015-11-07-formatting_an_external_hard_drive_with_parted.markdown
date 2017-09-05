@@ -19,6 +19,10 @@ Unmount the partition to format; here:
 
     umount /dev/sdb1
 
+## Optional: Remove all partitions, data and create empty disk
+
+    sudo dd if=/dev/zero of=/dev/sdb bs=512 count=1
+
 ## Parted
 
     sudo parted /dev/sdb
