@@ -110,3 +110,7 @@ E.g. to shrink the filesystem to 500G:
 ### Mount the LV:
 
     bougui@mantrisse ~> sudo mount /backup
+
+## Rename a logical volume:
+
+    bougui@mantrisse ~> sudo lvrename VG_NAME OLD_LV_NAME NEW_LV_NAME
