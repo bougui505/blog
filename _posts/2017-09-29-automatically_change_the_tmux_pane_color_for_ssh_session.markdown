@@ -9,7 +9,7 @@ tags:
 
 # Automatically change the tmux pane color for SSH session
 
-Add this line to your `.zshrc` (should also work with bash -- `.bashrc`)
+Add these lines to your `.zshrc` (should also work with bash -- `.bashrc`)
 
     function color_ssh() {
         if [[ "$TERM" = "screen" ]]; then
