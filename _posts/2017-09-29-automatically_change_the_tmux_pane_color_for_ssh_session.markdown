@@ -12,8 +12,10 @@ tags:
 Add this line to your `.zshrc` (should also work with bash -- `.bashrc`)
 
     function color_ssh() {
-        trap "tmux select-pane -P 'bg=default'" 0 1 2 3 4 5 6
-        tmux select-pane -P 'bg=colour230'
+        if [[ "$TERM" = "screen" ]]; then
+            trap "tmux select-pane -P 'bg=default'" 0 1 2 3 4 5 6
+            tmux select-pane -P 'bg=colour230'
+        fi
         ssh $@
     }
     alias ssh=color_ssh
