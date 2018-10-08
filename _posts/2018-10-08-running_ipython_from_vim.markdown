@@ -2,8 +2,9 @@
 title: "Running IPython from vim"
 layout: default
 date: 2018-10-08
-tags: - ipython
-      - python
+tags:
+- python
+- ipython
 ---
 
 # Running IPython from vim
