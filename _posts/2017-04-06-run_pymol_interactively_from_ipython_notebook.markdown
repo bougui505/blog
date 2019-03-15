@@ -11,14 +11,14 @@ tags:
 # Run pymol interactively from IPython notebook
 
 {% highlight python %}
-# Tell PyMOL we don't want any GUI features.
+import sys
 import __main__
-__main__.pymol_argv = [ 'pymol', '-qi' ]
-# Importing the PyMOL module will create the window.
+#__main__.pymol_argv = ['pymol', '-c'] # Optionnaly pass options to pymol
 import pymol
+stdout = sys.stdout # To get the stdout in the notebook instead of in the pymol console
 import pymol.cmd as cmd
-# Call the function below before using any PyMOL modules.
 pymol.finish_launching()
+sys.stdout = stdout
 {% endhighlight %}
 
 Example usage:
