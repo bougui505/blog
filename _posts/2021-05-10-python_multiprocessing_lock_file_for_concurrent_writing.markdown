@@ -8,4 +8,4 @@ tags:
 
 # Python multiprocessing lock file for concurrent writing
 
-% gist xxxxx
+gist xxxxx
